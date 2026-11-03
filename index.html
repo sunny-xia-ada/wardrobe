@@ -63,37 +63,56 @@ button,input{font-family:inherit}
 .board.nm0{grid-template-columns:1fr}
 @media(min-width:560px){.opt{padding:24px 20px 20px}}
 
-/* carousel */
+/* tinder stack */
 html,body{overflow-x:hidden}
-.car{position:relative;margin:0 -14px}
-.track{--cw:min(88%,440px);--gp:10px;position:relative;display:flex;gap:var(--gp);overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;padding:22px 0 12px;scrollbar-width:none;-ms-overflow-style:none}
-.track::-webkit-scrollbar{display:none}
-.track::before,.track::after{content:"";flex:0 0 max(0px,calc((100% - var(--cw))/2 - var(--gp)))}
-.track .opt{flex:0 0 var(--cw);min-width:0;scroll-snap-align:center;scroll-snap-stop:always;margin:0;padding:20px 12px 14px;align-self:flex-start}
-.cdots{display:flex;justify-content:center;align-items:center;gap:2px;margin:0 0 4px}
-.cdot{width:24px;height:24px;border:0;background:none;padding:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
-.cdot:after{content:"";display:block;width:8px;height:8px;border-radius:99px;background:var(--line);transition:width .2s,background .2s}
-.cdot.on:after{width:22px;background:var(--deep)}
-.cbtn{display:none;position:absolute;top:42%;z-index:5;width:40px;height:40px;border-radius:50%;border:2px solid var(--line);background:#fff;color:var(--deep);cursor:pointer;padding:0;align-items:center;justify-content:center;box-shadow:0 6px 14px -6px rgba(0,0,0,.25)}
-.cbtn:disabled{opacity:.35;cursor:default}
-.cbtn.prev{left:10px}.cbtn.next{right:10px}
-.cbtn svg{width:18px;height:18px}
-@media(min-width:700px){.cbtn{display:inline-flex}}
-.opt .cm{width:100%}.opt .cm img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:22px;border:2px solid var(--line);background:var(--chip)}
-.opt h3{font-size:16px;line-height:22px;margin:8px 0 2px}
-.opt .evt{gap:6px}.opt .cn{font-size:12px;font-weight:800;color:var(--muted)}
-.opt .fit{font-size:12px;line-height:17px}
-.opt .wx{margin:8px 0 10px;padding:5px 10px;font-size:12px;line-height:17px}
-.cflat{margin-top:10px;background:var(--chip);border-radius:18px;padding:8px}
-.cflat .og{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 6px}
-.cflat .oi .nm{font-size:10.5px;line-height:13px;-webkit-line-clamp:2}.cflat .oi .sl{font-size:10.5px;line-height:14px}.cflat .oi .co{font-size:10px;line-height:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.cflat .oi .img{border-radius:10px}
-.cflat .oi.ms .img{font-size:14px}
-.opt .nt{margin-top:8px;font-size:12px;line-height:17px;padding:5px 10px}
-.opt .wy{margin-top:10px}
-.opt .wy summary{cursor:pointer;list-style:none;font-size:13px;font-weight:800;color:var(--deep);padding:4px 2px}.opt .wy summary::-webkit-details-marker{display:none}.opt .wy summary:after{content:" \25BE"}.opt .wy[open] summary:after{content:" \25B4"}
-.opt .wy p{margin:4px 2px 0;font-size:13.5px;line-height:20px;font-weight:500}
-@media(min-width:560px){.track .opt{padding:22px 16px 16px}.cflat .og{gap:10px 8px}.cflat .oi .nm{font-size:11.5px;line-height:14px}}
+.stkw{margin:0 0 6px}
+.stk{position:relative;overflow:hidden;padding:24px 0 6px;margin:0 -14px;-webkit-user-select:none;user-select:none}
+.deck{--ch:700px;position:relative;width:min(100%,440px);height:calc(var(--ch) + 34px);margin:0 auto}
+.sc{position:absolute;left:4%;top:0;width:92%;height:var(--ch);background:#fff;border:2px solid var(--line);border-radius:26px;padding:18px 12px 10px;display:flex;flex-direction:column;touch-action:pan-y;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;will-change:transform;cursor:grab;box-shadow:0 12px 26px -16px rgba(190,60,115,.45);transform-origin:50% 100%;transition:transform .34s cubic-bezier(.22,.9,.3,1.05),opacity .25s;backface-visibility:hidden}
+.sc.drag{transition:none;cursor:grabbing}
+.sc.fly{transition:transform .42s cubic-bezier(.3,.1,.6,.9),opacity .42s}
+.sc img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+.sct{display:flex;align-items:center;gap:8px;min-width:0}
+.sct .dt{flex:none;font-size:12px;line-height:22px;font-weight:900;color:#fff;background:var(--deep);border-radius:999px;padding:0 11px}
+.sct .swx{min-width:0;font-size:12px;line-height:20px;font-weight:700;color:var(--muted);background:var(--chip);border-radius:999px;padding:0 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sc h3{margin:8px 0 0;font-size:16px;line-height:22px;font-weight:900;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.smd{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;margin:8px 0}
+.smd img{height:100%;max-width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px;border:2px solid var(--line);background:var(--chip)}
+.sc .cflat{margin:0;background:var(--chip);border-radius:16px;padding:8px}
+.sc .cflat .og{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 6px}
+.sc .oi .nm{font-size:10.5px;line-height:13px;-webkit-line-clamp:2}.sc .oi .sl{font-size:10.5px;line-height:14px}.sc .oi .co{display:none}
+.sc .oi .img{border-radius:10px}.sc .oi.ms .img{font-size:14px}
+.sc.nomd .cflat{flex:1;margin:10px 0 0;display:flex;align-items:center}.sc.nomd .cflat .og{width:100%;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 10px}
+.sc.nomd .oi .nm{font-size:12px;line-height:15px}.sc.nomd .oi .sl{font-size:12px}
+.wbtn{margin:8px auto 0;border:0;background:none;color:var(--deep);font-size:13px;font-weight:800;cursor:pointer;padding:4px 10px;flex:none}
+.cwhy{position:absolute;inset:0;background:rgba(255,255,255,.97);border-radius:24px;padding:22px 16px 14px;display:none;flex-direction:column;gap:8px;z-index:6;overflow:hidden}
+.sc.why .cwhy{display:flex}
+.cwhy .fit,.cwhy .wsl{font-size:13px;line-height:19px;font-weight:600;color:var(--muted)}.cwhy .fit b{color:var(--deep)}
+.cwhy p{margin:0;font-size:14px;line-height:21px;font-weight:500}
+.cwhy .nt{margin:0}
+.cwhy .wbtn{margin-top:auto}
+.stamp{position:absolute;top:50px;z-index:5;opacity:0;pointer-events:none;font-size:20px;line-height:1;font-weight:900;letter-spacing:1px;padding:8px 14px;border-radius:16px;border:3px solid;background:rgba(255,255,255,.88);display:flex;align-items:center;gap:5px}
+.stamp svg{width:20px;height:18px}
+.stamp.like{left:14px;color:var(--deep);border-color:var(--deep);transform:rotate(-14deg)}
+.stamp.nope{right:14px;color:#9C6B87;border-color:#E8B5CE;transform:rotate(14deg)}
+.sc.endc{display:none;align-items:center;justify-content:center;text-align:center;gap:10px;touch-action:auto;cursor:default;transition:opacity .35s;opacity:0;z-index:1}
+.sc.endc.show{display:flex;opacity:1}
+.sc.endc img{width:150px;height:auto}
+.sc.endc h3{display:block;font-size:22px;line-height:30px;margin:0}
+.sc.endc p{margin:0;font-size:13px;color:var(--muted);font-weight:600}
+.again{border:0;background:var(--deep);color:#fff;font-size:16px;font-weight:800;border-radius:999px;padding:12px 26px;cursor:pointer;box-shadow:0 8px 18px -8px var(--deep)}
+.sctl{display:flex;align-items:center;justify-content:center;gap:26px;margin:6px 0 4px}
+.rb{width:58px;height:58px;border-radius:50%;border:2px solid var(--line);background:#fff;color:var(--muted);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0;box-shadow:0 8px 16px -8px rgba(190,60,115,.45);transition:transform .15s}
+.rb:active{transform:scale(.92)}.rb svg{width:26px;height:26px}
+.rb.lk{background:var(--deep);border-color:var(--deep);color:#fff}
+.rb:disabled{opacity:.4;cursor:default}
+.scn{min-width:64px;text-align:center;font-size:15px;font-weight:800;color:var(--ink)}
+.lkrow{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:8px 0;border-top:1.5px dashed var(--line)}
+.lkrow:first-of-type{border-top:0}
+.lkrow img{width:56px;height:74px;object-fit:cover;border-radius:12px;border:1.5px solid var(--line);background:var(--chip)}
+.lkrow b{display:block;font-size:14px;line-height:19px;font-weight:800}.lkrow span{font-size:12px;color:var(--muted);font-weight:600}
+.lkrow button{border:2px solid var(--line);background:#fff;color:var(--deep);border-radius:999px;font-size:12px;font-weight:800;padding:6px 12px;cursor:pointer}
+@media(min-width:560px){.sc{padding:20px 16px 12px}.sc .oi .nm{font-size:11.5px;line-height:14px}}
 /* weather note */
 .wnote{display:flex;gap:10px;align-items:flex-start;background:#fff;border:2px solid var(--line);border-radius:24px;padding:12px 14px 10px 10px;margin-bottom:6px}
 .wnote img{flex:none;width:64px;height:auto}
@@ -251,48 +270,85 @@ function ogrid(items,miss){var g=el("div","og");items.forEach(function(it){g.app
 function board(o){var b=el("div","board"+(o.m?"":" nm0"));if(o.m){var m=el("div","mdl");m.appendChild(im(MDL[o.m],"","虚拟模特穿着："+o.title));b.appendChild(m);}
 var f=el("div","flat");f.appendChild(ogrid(o.items,o.miss));b.appendChild(f);return b;}
 var BOWPOS=["bw-tc","bw-tc","bw-tc"];
-function optCard(o,N){var c=el("div","opt");c.setAttribute("role","listitem");var t=el("div","evt");t.appendChild(el("span","dt","选项 "+o.n));t.appendChild(el("span","cn",o.n+" / "+N));c.appendChild(t);
-c.appendChild(el("h3",null,o.title));var ft=el("div","fit");ft.appendChild(el("b",null,"适合："));ft.appendChild(document.createTextNode(o.fit));c.appendChild(ft);
-c.appendChild(el("div","wx","天气 · "+o.wx));
-if(o.m){var m=el("div","cm");m.appendChild(im(MDL[o.m],"","虚拟模特穿着："+o.title));c.appendChild(m);}
-var f=el("div","cflat");f.appendChild(ogrid(o.items,o.miss));c.appendChild(f);
-if(o.note)c.appendChild(el("div","nt",o.note));
-var d=document.createElement("details");d.className="wy";var sm=document.createElement("summary");sm.textContent="为什么这样搭";d.appendChild(sm);d.appendChild(el("p",null,o.reason));c.appendChild(d);
+var LK="yidanWardrobeLikes",likes=[];try{likes=JSON.parse(localStorage.getItem(LK)||"[]");if(!Array.isArray(likes))likes=[];}catch(e){likes=[];}
+function saveLikes(){try{localStorage.setItem(LK,JSON.stringify(likes));}catch(e){}}
+function updLikes(){var n=document.getElementById("lkcnt");if(n)n.textContent=likes.length;}
+var XSVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+var HSVG='<svg viewBox="0 0 24 22" fill="currentColor"><path d="M12 21C5 15.5 2 11.5 2 7.6 2 4.6 4.3 2.5 7 2.5c2.2 0 3.8 1.2 5 3 1.2-1.8 2.8-3 5-3 2.7 0 5 2.1 5 5.1 0 3.9-3 7.9-10 13.4z"/></svg>';
+function optCard(o,N){var c=el("div","sc"+(o.m?"":" nomd"));c.setAttribute("data-id",o.id);
+var sl=el("div","stamp like");sl.innerHTML=HSVG+"<span>喜欢</span>";var sn=el("div","stamp nope");sn.textContent="下一套";c.appendChild(sl);c.appendChild(sn);
+var t=el("div","sct");t.appendChild(el("span","dt","选项 "+o.n));t.appendChild(el("span","swx","天气 · "+o.wx));c.appendChild(t);
+c.appendChild(el("h3",null,o.title));
+if(o.m){var m=el("div","smd");var g=im(MDL[o.m],"","虚拟模特穿着："+o.title);g.draggable=false;m.appendChild(g);c.appendChild(m);}
+var f=el("div","cflat");var og=el("div","og");o.items.forEach(function(it){var x=oitemDiv(it);og.appendChild(x);});(o.miss||[]).forEach(function(mm){og.appendChild(oitemDiv({miss:1,n:mm}));});f.appendChild(og);c.appendChild(f);
+var wb=el("button","wbtn","为什么这样搭 ▾");wb.type="button";c.appendChild(wb);
+var w=el("div","cwhy");var ft=el("div","fit");ft.appendChild(el("b",null,"适合："));ft.appendChild(document.createTextNode(o.fit));w.appendChild(ft);w.appendChild(el("div","wsl","天气 · "+o.wx));
+var wh=el("div","why");wh.appendChild(el("b",null,"为什么"));wh.appendChild(document.createTextNode(o.reason));w.appendChild(wh);
+if(o.note)w.appendChild(el("div","nt",o.note));var cb=el("button","wbtn","收起 ▴");cb.type="button";w.appendChild(cb);c.appendChild(w);
+c.addEventListener("dragstart",function(e){e.preventDefault();});c.querySelectorAll("img").forEach(function(i){i.draggable=false;});
 return adorn(c,["bw-tc",o.n%2?"hp2":"hp3",o.n%2?"hp1":"hp4"]);}
-var ARW='<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 4 6.5 10l6 6"/></svg>';
-function carousel(g){var car=el("div","car");var tr=el("div","track");tr.setAttribute("role","list");tr.setAttribute("aria-label",g.label+"搭配，左右滑动");
-g.opts.forEach(function(o){tr.appendChild(optCard(o,g.opts.length));});car.appendChild(tr);
-var pv=el("button","cbtn prev");pv.type="button";pv.setAttribute("aria-label","上一套");pv.innerHTML=ARW;
-var nx=el("button","cbtn next");nx.type="button";nx.setAttribute("aria-label","下一套");nx.innerHTML=ARW;nx.firstChild.style.transform="scaleX(-1)";
-car.appendChild(pv);car.appendChild(nx);
-var dots=el("div","cdots");var cur=0,raf=0;
-var ds=g.opts.map(function(o,i){var b=el("button","cdot"+(i===0?" on":""));b.type="button";b.setAttribute("aria-label","第 "+(i+1)+" 套");b.onclick=function(){go(i);};dots.appendChild(b);return b;});
-function cards(){return tr.querySelectorAll(".opt");}
-function go(i){var cs=cards();var c=cs[Math.max(0,Math.min(cs.length-1,i))];if(!c)return;tr.scrollTo({left:c.offsetLeft-(tr.clientWidth-c.offsetWidth)/2,behavior:"smooth"});}
-function upd(){var cs=cards(),mid=tr.scrollLeft+tr.clientWidth/2,best=0,bd=1e9;for(var i=0;i<cs.length;i++){var d=Math.abs(cs[i].offsetLeft+cs[i].offsetWidth/2-mid);if(d<bd){bd=d;best=i;}}
-cur=best;ds.forEach(function(b,i){b.className="cdot"+(i===best?" on":"");});pv.disabled=best===0;nx.disabled=best===cs.length-1;}
-pv.onclick=function(){go(cur-1);};nx.onclick=function(){go(cur+1);};
-tr.addEventListener("scroll",function(){if(!raf)raf=requestAnimationFrame(function(){raf=0;upd();});},{passive:true});
-window.addEventListener("resize",upd);setTimeout(upd,0);
-var wrap=document.createElement("div");wrap.appendChild(car);wrap.appendChild(dots);return wrap;}
+function oitemDiv(it){var b=oitem(it);if(b.tagName==="A"){var d=el("div","oi");while(b.firstChild)d.appendChild(b.firstChild);b=d;}return b;}
+function stack(g){var N=g.opts.length,cur=0;var wrap=el("div","stkw");var stk=el("div","stk");var deck=el("div","deck");
+var cards=g.opts.map(function(o){var c=optCard(o,N);deck.appendChild(c);return c;});
+var ec=el("div","sc endc");ec.appendChild(im(ILL[g.ill==="bunny_peek"?"bunny_sleep":g.ill],"","这组看完啦"));ec.appendChild(el("h3",null,"这组看完啦"));var ep=el("p",null,"");ec.appendChild(ep);
+var ab=el("button","again","再看一遍");ab.type="button";ec.appendChild(ab);deck.appendChild(ec);adorn(ec,["bw-tc","hp2","hp3"]);ec.querySelectorAll("img").forEach(function(i){i.draggable=false;});
+stk.appendChild(deck);wrap.appendChild(stk);
+var ctl=el("div","sctl");var xb=el("button","rb");xb.type="button";xb.setAttribute("aria-label","下一套");xb.innerHTML=XSVG;var hb=el("button","rb lk");hb.type="button";hb.setAttribute("aria-label","喜欢");hb.innerHTML=HSVG;var cn=el("div","scn");ctl.appendChild(xb);ctl.appendChild(cn);ctl.appendChild(hb);wrap.appendChild(ctl);
+function base(k,p){var q=k-p;return "translate3d(0,"+(q*14)+"px,0) scale("+(1-0.05*q)+")";}
+function layout(){cards.forEach(function(c,i){if(c._gone)return;var k=i-cur;c.style.transform=base(k,0);c.style.zIndex=100-k;c.style.opacity=k>2?"0":"1";c.style.pointerEvents=k===0?"auto":"none";});
+var done=cur>=N;cn.textContent=Math.min(cur+1,N)+" / "+N;xb.disabled=hb.disabled=done;ec.classList.toggle("show",done);
+if(done){var n=g.opts.filter(function(o){return likes.indexOf(o.id)>=0;}).length;ep.textContent=n?"这一组你喜欢了 "+n+" 套 ♡":"没有特别喜欢的？再看一遍也行";}}
+function W(){return deck.clientWidth*0.92;}
+function fly(dir,dy,fromDrag){var c=cards[cur];if(!c||c._gone)return;var o=g.opts[cur];c._gone=1;c.classList.remove("drag","why");c.classList.add("fly");
+var st=c.querySelector(dir>0?".stamp.like":".stamp.nope");st.style.opacity="1";
+if(dir>0&&likes.indexOf(o.id)<0){likes.push(o.id);saveLikes();updLikes();}
+c.style.transform="translate3d("+(dir*deck.clientWidth*1.5)+"px,"+(dy||20)+"px,0) rotate("+(dir*26)+"deg)";c.style.pointerEvents="none";c.style.zIndex=300;
+cur++;layout();setTimeout(function(){c.style.visibility="hidden";},460);}
+function reset(){cards.forEach(function(c){c._gone=0;c.classList.remove("fly","drag","why");c.style.transition="none";c.style.visibility="";c.style.opacity="";c.querySelectorAll(".stamp").forEach(function(s){s.style.opacity="0";});});cur=0;layout();void deck.offsetWidth;cards.forEach(function(c){c.style.transition="";});}
+xb.onclick=function(){fly(-1,30);};hb.onclick=function(){fly(1,30);};ab.onclick=reset;
+cards.forEach(function(c,i){var sx=0,sy=0,id=null,drag=false,down=null,lx=0,lt=0,v=0,dxl=0;
+var like=c.querySelector(".stamp.like"),nope=c.querySelector(".stamp.nope");
+c.querySelectorAll(".wbtn").forEach(function(b){b.addEventListener("click",function(e){e.stopPropagation();c.classList.toggle("why");});b.addEventListener("pointerdown",function(e){e.stopPropagation();});});
+c.addEventListener("pointerdown",function(e){if(i!==cur||c._gone||id!==null)return;if(e.pointerType==="mouse"&&e.button!==0)return;id=e.pointerId;sx=lx=e.clientX;sy=e.clientY;lt=e.timeStamp;v=0;drag=false;down=e.target;dxl=0;try{c.setPointerCapture(id);}catch(x){}});
+c.addEventListener("pointermove",function(e){if(e.pointerId!==id)return;var dx=e.clientX-sx,dy=e.clientY-sy;
+if(!drag){if(Math.abs(dx)>6&&Math.abs(dx)>Math.abs(dy)){drag=true;c.classList.add("drag");c.classList.remove("why");}else return;}
+var dt=e.timeStamp-lt;if(dt>0){v=0.8*v+0.2*((e.clientX-lx)/dt);}lx=e.clientX;lt=e.timeStamp;dxl=dx;
+var w=W(),rot=Math.max(-15,Math.min(15,dx/w*30));c.style.transform="translate3d("+dx+"px,"+(dy*0.35)+"px,0) rotate("+rot+"deg)";
+var p=Math.min(1,Math.abs(dx)/(w*0.3));like.style.opacity=dx>0?String(p):"0";nope.style.opacity=dx<0?String(p):"0";
+cards.forEach(function(n,j){if(j<=cur||n._gone)return;var k=j-cur;n.classList.add("drag");n.style.transform=base(k,p);});});
+function end(e,cancel){if(e.pointerId!==id)return;try{c.releasePointerCapture(id);}catch(x){}id=null;
+var dx=e.clientX-sx,dy=e.clientY-sy;
+if(!drag){if(!cancel&&Math.abs(dx)<6&&Math.abs(dy)<6&&down&&down.closest&&down.closest(".wbtn"))c.classList.toggle("why");return;}
+drag=false;c.classList.remove("drag");cards.forEach(function(n){n.classList.remove("drag");});
+var w=W();var go=!cancel&&(Math.abs(dx)>w*0.3||(Math.abs(v)>0.5&&Math.abs(dx)>30));
+if(go){fly(dx>0?1:-1,dy*0.35,true);}else{like.style.opacity="0";nope.style.opacity="0";layout();}}
+c.addEventListener("pointerup",function(e){end(e,false);});c.addEventListener("pointercancel",function(e){end(e,true);});});
+layout();return wrap;}
+function renderLiked(root){var all=[];TYPES.forEach(function(g){g.opts.forEach(function(o){if(likes.indexOf(o.id)>=0)all.push([g,o]);});});
+var mp=el("div","panel");mp.style.marginTop="14px";var mh=el("div","ph");mh.appendChild(el("h2",null,"我喜欢的"));mh.appendChild(el("span","badge",all.length+" 套"));mp.appendChild(mh);
+if(!all.length){var e=el("div","empty");e.style.border="0";e.appendChild(im(ILL.bunny_sleep,"","睡着的小兔"));e.appendChild(document.createTextNode("还没有喜欢的：在卡片上右滑，或点 ♡ 按钮"));mp.appendChild(e);}
+all.forEach(function(x){var g=x[0],o=x[1];var r=el("div","lkrow");var src=o.m?MDL[o.m]:(o.items[0]&&o.items[0].i)||"";var t=document.createElement("img");t.src=src;t.alt="";r.appendChild(t);var d=el("div");d.appendChild(el("b",null,o.title));d.appendChild(el("span",null,g.label+" · 选项 "+o.n));r.appendChild(d);
+var b=el("button",null,"取消");b.type="button";b.onclick=function(){likes=likes.filter(function(k){return k!==o.id;});saveLikes();renderEvents();};r.appendChild(b);mp.appendChild(r);});
+root.appendChild(adorn(mp,["bw-tc","hp2","hp3"]));}
 function sessChip(s){var c=el("span","sc2");c.appendChild(el("b",null,s.d+" "+s.w+" "+s.t));c.appendChild(document.createTextNode(s.p+(s.n?" · "+s.n:"")));return c;}
 function renderEvents(){var root=document.getElementById("events");root.innerHTML="";
 var total=0;TYPES.forEach(function(g){total+=g.opts.length;});
 var fb=el("div","fbar");var pr=el("div","pills");pr.appendChild(pill(evf==="all","全部",total,function(){evf="all";renderEvents();}));
-TYPES.forEach(function(g){pr.appendChild(pill(evf===g.k,g.label,g.opts.length,function(){evf=g.k;renderEvents();window.scrollTo(0,document.getElementById("tabs").offsetTop);}));});fb.appendChild(pr);root.appendChild(fb);
+TYPES.forEach(function(g){pr.appendChild(pill(evf===g.k,g.label,g.opts.length,function(){evf=g.k;renderEvents();window.scrollTo(0,document.getElementById("tabs").offsetTop);}));});var lp=pill(evf==="liked","♡ 喜欢",likes.length,function(){evf="liked";renderEvents();window.scrollTo(0,document.getElementById("tabs").offsetTop);});lp.lastChild.id="lkcnt";pr.appendChild(lp);fb.appendChild(pr);root.appendChild(fb);
 var wn=el("div","wnote");wn.appendChild(im(ILL.bunny_umbrella,"","打伞的小兔"));var wt=el("div");wt.appendChild(el("div","wl","天气 · 西雅图 / Bellevue"));
 wt.appendChild(el("div","wsum","11/3–11/12 约 4–15°C。11/4–11/8 连续小雨（11/8 最湿，约 6 mm），11/9 起转多云，11/10–11/12 基本不下雨，11/15 演唱会当天有雨。"));
 var dt=document.createElement("details");dt.className="wdt";var sm=document.createElement("summary");sm.textContent="逐日天气";dt.appendChild(sm);var wc=el("div","wchips");
 WSUM.forEach(function(d){var c=el("div","wc");c.appendChild(el("b",null,d.d+" "+d.w));c.appendChild(el("span",null,d.lo+"–"+d.hi+"°C · "+d.t));wc.appendChild(c);});
 var c2=el("div","wc");c2.appendChild(el("b",null,"11/18 以后"));c2.appendChild(el("span",null,"典型 5–11°C · 常有小雨"));wc.appendChild(c2);dt.appendChild(wc);
 dt.appendChild(el("div","wsrc","11/17 前为预报（Open-Meteo 温度 + NWS 降雨概率），11/18 以后超出预报，按典型 11 月中旬天气估计。"));wt.appendChild(dt);wn.appendChild(wt);root.appendChild(adorn(wn,["bw-tr","hp2"]));
+if(evf==="liked"){renderLiked(root);return;}
 var first=true;TYPES.forEach(function(g){if(evf!=="all"&&evf!==g.k)return;
 if(!first)root.appendChild(divider());first=false;
 var gh=el("div","gh");gh.id="g-"+g.k;var gt=el("div","gtop");gt.appendChild(im(ILL[g.ill],g.flip?"fl2":"",""));var tt=el("div","gt");tt.appendChild(el("h2",null,g.label));tt.appendChild(el("span","badge",g.opts.length+" 套"));gt.appendChild(tt);gt.appendChild(el("p",null,g.desc));gh.appendChild(gt);
 var se=el("div","sess");if(g.sessions.length)g.sessions.forEach(function(s){se.appendChild(sessChip(s));});else se.appendChild(el("span","sc2 e",g.empty));gh.appendChild(se);
 if(g.note)gh.appendChild(el("div","nt gnote",g.note));
 root.appendChild(adorn(gh,["bw-tl","hp1","hp3"]));
-root.appendChild(carousel(g));});
+root.appendChild(stack(g));});
 root.appendChild(divider());
 var mp=el("div","panel");mp.style.marginTop="18px";var mh=el("div","ph");mh.appendChild(el("h2",null,"缺的单品"));mp.appendChild(mh);var mb=el("div","mbox");mb.appendChild(im(ILL.bunny_sleep,"","睡着的小兔"));var ul=el("ul","mlist");
 MISSING.forEach(function(m){var li=el("li");var d=el("div");d.appendChild(el("b",null,m[0]));d.appendChild(document.createTextNode("："+m[1]));li.appendChild(d);ul.appendChild(li);});
