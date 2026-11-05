@@ -257,7 +257,7 @@ a.card:hover{border-color:var(--deep);transform:translateY(-2px)}
 .padd{aspect-ratio:1/1;border-radius:16px;border:2px dashed var(--bow);background:var(--chip);color:var(--deep);font-size:26px;font-weight:800;cursor:pointer}
 .pcnt{font-size:12px;font-weight:700;color:var(--muted);margin:8px 2px 0}
 .perr{min-height:16px;font-size:12px;font-weight:700;color:#C2386F;margin:2px}
-.prow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.prow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;position:sticky;bottom:calc(-18px - env(safe-area-inset-bottom,0px));background:#fff;padding:8px 0 4px}
 .prow .fbtn:disabled{opacity:.45;box-shadow:none}
 .pdone{font-size:20px;font-weight:900;color:var(--deep);text-align:center;margin:6px 0}
 .ppriv{font-size:12px;color:var(--muted);text-align:center;margin:10px 0 0}
@@ -341,7 +341,7 @@ var XSVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-widt
 var HSVG='<svg viewBox="0 0 24 22" fill="currentColor"><path d="M12 21C5 15.5 2 11.5 2 7.6 2 4.6 4.3 2.5 7 2.5c2.2 0 3.8 1.2 5 3 1.2-1.8 2.8-3 5-3 2.7 0 5 2.1 5 5.1 0 3.9-3 7.9-10 13.4z"/></svg>';
 
 /* ---------- feedback (采纳 / 换一套) ---------- */
-var PV="20261104-ph1",FB_API="https://yidan-outfit-feedback.vercel.app/api/click",KKEY="yidanOutfitKey_v1",FSK="yidanOutfitState_v1",FQ="yidanOutfitQueue_v1";
+var PV="20261104-ph2",FB_API="https://yidan-outfit-feedback.vercel.app/api/click",KKEY="yidanOutfitKey_v1",FSK="yidanOutfitState_v1",FQ="yidanOutfitQueue_v1";
 function isStandalone(){try{return window.navigator.standalone===true||(window.matchMedia&&window.matchMedia("(display-mode: standalone)").matches);}catch(e){return false;}}
 var FBKEY="";
 (function(){try{var u=new URL(location.href),k=u.searchParams.get("k");if(k){try{localStorage.setItem(KKEY,k);}catch(e){}}
