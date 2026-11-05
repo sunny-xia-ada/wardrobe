@@ -313,7 +313,7 @@ var XSVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-widt
 var HSVG='<svg viewBox="0 0 24 22" fill="currentColor"><path d="M12 21C5 15.5 2 11.5 2 7.6 2 4.6 4.3 2.5 7 2.5c2.2 0 3.8 1.2 5 3 1.2-1.8 2.8-3 5-3 2.7 0 5 2.1 5 5.1 0 3.9-3 7.9-10 13.4z"/></svg>';
 
 /* ---------- feedback (采纳 / 换一套) ---------- */
-var PV="20261104-fb2",FB_API="https://yidan-outfit-feedback.vercel.app/api/click",KKEY="yidanOutfitKey_v1",FSK="yidanOutfitState_v1",FQ="yidanOutfitQueue_v1";
+var PV="20261104-fb3",FB_API="https://yidan-outfit-feedback.vercel.app/api/click",KKEY="yidanOutfitKey_v1",FSK="yidanOutfitState_v1",FQ="yidanOutfitQueue_v1";
 function isStandalone(){try{return window.navigator.standalone===true||(window.matchMedia&&window.matchMedia("(display-mode: standalone)").matches);}catch(e){return false;}}
 var FBKEY="";
 (function(){try{var u=new URL(location.href),k=u.searchParams.get("k");if(k){try{localStorage.setItem(KKEY,k);}catch(e){}}
@@ -329,7 +329,7 @@ function qsave(a){try{localStorage.setItem(FQ,JSON.stringify(a));}catch(e){}}
 function pad2(n){return(n<10?"0":"")+n;}
 function ptIso(d){try{var f=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Los_Angeles",hourCycle:"h23",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit"}),p={};
 f.formatToParts(d).forEach(function(x){p[x.type]=x.value;});var off=Math.round((Date.UTC(+p.year,+p.month-1,+p.day,+p.hour,+p.minute,+p.second)-Math.floor(d.getTime()/1000)*1000)/60000),a=Math.abs(off);
-return p.year+"-"+p.month+"-"+p.day+"T"+p.hour+":"+p.minute+":"+p.second+(off<0?"-":"+")+pad2(Math.floor(a/60))+":"+pad2(a%60);}catch(e){var t=new Date(d.getTime()-288e5);return t.toISOString().slice(0,19)+"-08:00";}}
+return p.year+"-"+p.month+"-"+p.day+"T"+p.hour+":"+p.minute+":"+p.second+"."+("00"+d.getMilliseconds()).slice(-3)+(off<0?"-":"+")+pad2(Math.floor(a/60))+":"+pad2(a%60);}catch(e){var t=new Date(d.getTime()-288e5);return t.toISOString().slice(0,23)+"-08:00";}}
 function uuid(){try{if(crypto.randomUUID)return crypto.randomUUID();}catch(e){}var b=new Uint8Array(16);try{crypto.getRandomValues(b);}catch(e){for(var i=0;i<16;i++)b[i]=Math.floor(Math.random()*256);}b[6]=b[6]&15|64;b[8]=b[8]&63|128;var h=[].map.call(b,function(x){return(x<16?"0":"")+x.toString(16);}).join("");return h.slice(0,8)+"-"+h.slice(8,12)+"-"+h.slice(12,16)+"-"+h.slice(16,20)+"-"+h.slice(20);}
 function deviceStr(){var ua=navigator.userAgent||"",d="other",v="",m;if(/iPhone/.test(ua))d="iPhone";else if(/iPad/.test(ua))d="iPad";else if(/Android/.test(ua))d="Android";else if(/Macintosh/.test(ua))d="Mac";else if(/Windows/.test(ua))d="Windows";else if(/Linux/.test(ua))d="Linux";
 if((m=ua.match(/OS (\d+)[_.](\d+)/))&&/iPhone|iPad/.test(ua))v=" iOS"+m[1]+"."+m[2];else if(m=ua.match(/Android (\d+)/))v=" "+m[1];
