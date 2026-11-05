@@ -234,6 +234,34 @@ a.card:hover{border-color:var(--deep);transform:translateY(-2px)}
 @keyframes fbin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.sc.swapin>*:not(.stamp):not(.dc){animation:none}}
 .fbst{margin-top:8px}
+.camrow{display:flex;align-items:center;gap:10px;margin:8px 0 0}
+.fbtn.cam{flex:1;min-height:40px;font-size:14px;background:#fff;border:2px dashed var(--bow);color:var(--deep)}
+.camtag{font-size:12px;font-weight:800;color:var(--deep);white-space:nowrap}
+.pfab{position:fixed;right:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;min-height:50px;padding:0 18px;border-radius:999px;border:2px solid #fff;background:var(--deep);color:#fff;font-size:18px;font-weight:800;cursor:pointer;box-shadow:0 10px 22px -8px var(--deep);display:flex;align-items:center;touch-action:manipulation}
+.pfab span{font-size:14px;margin-left:2px}
+.pfabt{position:fixed;right:14px;bottom:calc(74px + env(safe-area-inset-bottom,0px));z-index:40;background:#fff;border:2px solid var(--line);color:var(--deep);font-size:13px;font-weight:800;padding:6px 12px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .3s}
+.pfabt.show{opacity:1}
+.pov{position:fixed;inset:0;z-index:100;background:rgba(74,23,48,.45);display:flex;align-items:flex-end;justify-content:center}
+.ppn{width:100%;max-width:560px;max-height:92vh;overflow:auto;background:#fff;border-radius:26px 26px 0 0;padding:16px 16px calc(18px + env(safe-area-inset-bottom,0px));border:2px solid var(--line);border-bottom:0}
+.pth{display:flex;align-items:center}.pth h2{margin:0;font-size:19px;flex:1}
+.pcl{border:0;background:var(--soft);color:var(--deep);width:34px;height:34px;border-radius:50%;font-size:15px;font-weight:800;cursor:pointer}
+.phint{margin:6px 0 10px;font-size:13px;line-height:19px;font-weight:600;color:var(--muted)}
+.pfl{font-size:13px;font-weight:800;color:var(--muted);margin:2px 2px 8px}
+.pfix{font-size:15px;font-weight:800;margin:0 0 10px;color:var(--ink)}
+.ppn .pills{margin-bottom:10px}.ppn .pill{padding:0 14px;min-height:38px;font-size:14px}
+.pnote{width:100%;border:2px solid var(--line);border-radius:16px;padding:10px 12px;font-size:15px;color:var(--ink);resize:none;margin-bottom:10px;background:#fff}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pth1{position:relative;aspect-ratio:1/1;border-radius:16px;overflow:hidden;background:var(--soft)}
+.pth1 img{width:100%;height:100%;object-fit:cover;display:block}
+.prm{position:absolute;top:4px;right:4px;width:26px;height:26px;border-radius:50%;border:0;background:rgba(74,23,48,.65);color:#fff;font-size:12px;cursor:pointer}
+.padd{aspect-ratio:1/1;border-radius:16px;border:2px dashed var(--bow);background:var(--chip);color:var(--deep);font-size:26px;font-weight:800;cursor:pointer}
+.pcnt{font-size:12px;font-weight:700;color:var(--muted);margin:8px 2px 0}
+.perr{min-height:16px;font-size:12px;font-weight:700;color:#C2386F;margin:2px}
+.prow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.prow .fbtn:disabled{opacity:.45;box-shadow:none}
+.pdone{font-size:20px;font-weight:900;color:var(--deep);text-align:center;margin:6px 0}
+.ppriv{font-size:12px;color:var(--muted);text-align:center;margin:10px 0 0}
+
 </style></head><body><div class="wrap">
 <header class="top"><h1>一丹的衣橱</h1><p class="sub" id="sub"></p><div class="dots" id="dots"></div><img class="peek" id="peek" alt="" width="82" height="98"></header>
 <div class="tabs" id="tabs"></div>
@@ -313,7 +341,7 @@ var XSVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-widt
 var HSVG='<svg viewBox="0 0 24 22" fill="currentColor"><path d="M12 21C5 15.5 2 11.5 2 7.6 2 4.6 4.3 2.5 7 2.5c2.2 0 3.8 1.2 5 3 1.2-1.8 2.8-3 5-3 2.7 0 5 2.1 5 5.1 0 3.9-3 7.9-10 13.4z"/></svg>';
 
 /* ---------- feedback (采纳 / 换一套) ---------- */
-var PV="20261104-fb4",FB_API="https://yidan-outfit-feedback.vercel.app/api/click",KKEY="yidanOutfitKey_v1",FSK="yidanOutfitState_v1",FQ="yidanOutfitQueue_v1";
+var PV="20261104-ph1",FB_API="https://yidan-outfit-feedback.vercel.app/api/click",KKEY="yidanOutfitKey_v1",FSK="yidanOutfitState_v1",FQ="yidanOutfitQueue_v1";
 function isStandalone(){try{return window.navigator.standalone===true||(window.matchMedia&&window.matchMedia("(display-mode: standalone)").matches);}catch(e){return false;}}
 var FBKEY="";
 (function(){try{var u=new URL(location.href),k=u.searchParams.get("k");if(k){try{localStorage.setItem(KKEY,k);}catch(e){}}
@@ -336,7 +364,7 @@ if((m=ua.match(/OS (\d+)[_.](\d+)/))&&/iPhone|iPad/.test(ua))v=" iOS"+m[1]+"."+m
 return(d+v+" "+(isStandalone()?"app":"web")).slice(0,60);}
 var fbBad=false,fbBusy=false,fbDelay=15000,fbTimer=null;
 function fbRetry(){clearTimeout(fbTimer);fbTimer=setTimeout(fbFlush,fbDelay);fbDelay=Math.min(fbDelay*2,300000);}
-function fbFlush(){if(fbBusy)return;var q=qload();fbRefresh();if(!q.length||!FBKEY)return;fbBusy=true;var rec=q[0],ctl=window.AbortController?new AbortController():null,tm=setTimeout(function(){if(ctl)ctl.abort();},12000);
+function fbFlush(){pFlush();if(fbBusy)return;var q=qload();fbRefresh();if(!q.length||!FBKEY)return;fbBusy=true;var rec=q[0],ctl=window.AbortController?new AbortController():null,tm=setTimeout(function(){if(ctl)ctl.abort();},12000);
 function pop(){qsave(qload().filter(function(x){return x.click_id!==rec.click_id;}));}
 fetch(FB_API,{method:"POST",headers:{"content-type":"application/json","x-key":FBKEY},body:JSON.stringify(rec),signal:ctl?ctl.signal:undefined}).then(function(r){clearTimeout(tm);
 if(r.ok||r.status===400||r.status===413||r.status===422){pop();fbDelay=15000;fbBad=false;fbBusy=false;fbFlush();}
@@ -344,11 +372,80 @@ else if(r.status===401||r.status===403){fbBad=true;fbBusy=false;fbRefresh();}
 else{throw new Error("s"+r.status);}}).catch(function(){clearTimeout(tm);fbBusy=false;fbRefresh();fbRetry();});}
 function fbLog(o,rec,action,repl,items,ritems){var r={click_id:uuid(),timestamp_pt:ptIso(new Date()),date:o.ed,event_id:o.ev,event_name:o.evn,rec_id:rec,action:action,replaced_by_rec_id:repl||"",
 items:items.map(function(x){return x.id;}).join(";"),source:"wardrobe-page",device:deviceStr(),page_version:PV};if(ritems)r.replaced_by_items=ritems.map(function(x){return x.id;}).join(";");var q=qload();q.push(r);qsave(q);fbFlush();}
-function fbMsg(){var n=qload().length;if(!FBKEY)return"还没打开专属链接：点过的先存在这台手机里"+(n?"（"+n+" 条）":"")+"，用专属链接打开一次就会自动补发 ♡";
+function fbMsg(){var n=qload().length+(PQN||0);if(!FBKEY)return"还没打开专属链接：点过的先存在这台手机里"+(n?"（"+n+" 条）":"")+"，用专属链接打开一次就会自动补发 ♡";
 if(fbBad)return"专属链接的钥匙好像失效了，请用最新的专属链接再打开一次";if(n)return"有 "+n+" 条反馈在排队，网络好了会自动发送";return"采纳 / 换一套的反馈都已记好 ✓";}
 function fbRefresh(){var e=document.getElementById("fbst");if(e)e.textContent=fbMsg();}
 function fbNote(fn,pre){if(!fn)return;fn.textContent=pre+(qload().length?(FBKEY?"（已存好，会自动发送）":"（先记在手机里，用专属链接打开一次就会同步）"):"（已记下 ✓）");fn.className="fbn show";clearTimeout(fn._t);fn._t=setTimeout(function(){fn.className="fbn";},5000);}
 window.addEventListener("online",fbFlush);document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")fbFlush();});setInterval(fbFlush,60000);
+/* ---------- 📷 outfit photos: stay private (IndexedDB on this phone -> private API/Blob). Never embedded in this page or repo. ---------- */
+var PQN=0,PMEM={},PQK="yidanOutfitPhotos_v1",PHN={},PH_API=FB_API.replace("/api/click","/api/photo"),pdb=null,pBusy=false,pDelay=15000,pTimer=null;
+var OCCS=["Power Jazz","Jazz Funk","Hip-hop","编舞","K-pop","Heels","日常","其他"],PMAX=6;
+try{PHN=JSON.parse(localStorage.getItem(PQK)||"{}")||{};}catch(e){PHN={};}
+function phSave(){try{localStorage.setItem(PQK,JSON.stringify(PHN));}catch(e){}}
+function pOpen(cb){if(pdb)return cb(pdb);try{var r=indexedDB.open("yidanOutfitPhotos",1);r.onupgradeneeded=function(){r.result.createObjectStore("jobs",{keyPath:"click_id"});};r.onsuccess=function(){pdb=r.result;cb(pdb);};r.onerror=function(){cb(null);};r.onblocked=function(){cb(null);};}catch(e){cb(null);}}
+function pAll(cb){pOpen(function(d){var mem=Object.keys(PMEM).map(function(k){return PMEM[k];});if(!d)return cb(mem);var o=[];try{var c=d.transaction("jobs","readonly").objectStore("jobs").openCursor();c.onsuccess=function(){var x=c.result;if(x){o.push(x.value);x.continue();}else cb(o.concat(mem));};c.onerror=function(){cb(mem);};}catch(e){cb(mem);}});}
+function pPut(job,cb){pOpen(function(d){function mem(){PMEM[job.click_id]=job;if(cb)cb();}if(!d)return mem();try{var tx=d.transaction("jobs","readwrite");tx.objectStore("jobs").put(job);tx.oncomplete=function(){if(cb)cb();};tx.onerror=mem;tx.onabort=mem;}catch(e){mem();}});}
+function pDel(id,cb){delete PMEM[id];pOpen(function(d){if(!d)return cb&&cb();try{var tx=d.transaction("jobs","readwrite");tx.objectStore("jobs").delete(id);tx.oncomplete=function(){if(cb)cb();};tx.onerror=function(){if(cb)cb();};}catch(e){if(cb)cb();}});}
+function pRetry(){clearTimeout(pTimer);pTimer=setTimeout(pFlush,pDelay);pDelay=Math.min(pDelay*2,300000);}
+function pReq(h,b,cb){var ctl=window.AbortController?new AbortController():null,tm=setTimeout(function(){if(ctl)ctl.abort();},90000);
+fetch(PH_API,{method:"POST",headers:h,body:b,signal:ctl?ctl.signal:undefined}).then(function(r){clearTimeout(tm);cb(r.status);}).catch(function(){clearTimeout(tm);cb(0);});}
+function pVerdict(st){if(st===401||st===403)return"auth";if(st===400||st===413||st===415||st===422)return"drop";return"retry";}
+function sendJob(job,cb){var i=0;function fin(){pReq({"content-type":"application/json","x-key":FBKEY},JSON.stringify(job.meta),function(st){if(st===200)cb("ok");else if(st===409){job.done=[];pPut(job,function(){cb("retry");});}else cb(pVerdict(st));});}
+function next(){if(i>=job.blobs.length)return fin();var idx=i+1;if((job.done||[]).indexOf(idx)>=0){i++;return next();}
+pReq({"content-type":"image/jpeg","x-key":FBKEY,"x-click-id":job.click_id,"x-idx":String(idx)},job.blobs[i],function(st){if(st===200){job.done=(job.done||[]).concat(idx);pPut(job,function(){i++;next();});}else cb(pVerdict(st));});}
+next();}
+function pFlush(){if(pBusy||!FBKEY){if(!FBKEY)pAll(function(j){PQN=j.length;fbRefresh();});return;}pBusy=true;
+pAll(function(jobs){PQN=jobs.length;fbRefresh();if(!jobs.length){pBusy=false;return;}jobs.sort(function(a,b){return a.meta.timestamp_pt<b.meta.timestamp_pt?-1:1;});var job=jobs[0];
+sendJob(job,function(res){if(res==="ok"||res==="drop"){pDel(job.click_id,function(){pDelay=15000;pBusy=false;pFlush();});}
+else if(res==="auth"){fbBad=true;pBusy=false;fbRefresh();}else{pBusy=false;pRetry();fbRefresh();}});});}
+function downscale(file,cb){function enc(w,h,src){var s=Math.min(1,1600/Math.max(w,h)),cw=Math.max(1,Math.round(w*s)),ch=Math.max(1,Math.round(h*s)),cv=document.createElement("canvas");cv.width=cw;cv.height=ch;
+var g=cv.getContext("2d");g.fillStyle="#fff";g.fillRect(0,0,cw,ch);g.drawImage(src,0,0,cw,ch);cv.toBlob(function(bl){cb(bl);},"image/jpeg",0.85);}
+function viaImg(){var u=URL.createObjectURL(file),im=new Image();im.onload=function(){var w=im.naturalWidth,h=im.naturalHeight;try{enc(w,h,im);}catch(e){cb(null);}URL.revokeObjectURL(u);};im.onerror=function(){URL.revokeObjectURL(u);cb(null);};im.src=u;}
+if(window.createImageBitmap){createImageBitmap(file,{imageOrientation:"from-image"}).then(function(b){try{enc(b.width,b.height,b);}catch(e){viaImg();}if(b.close)b.close();},viaImg);}else viaImg();}
+function todayPT(){return ptIso(new Date()).slice(0,10);}
+function camEvents(){var seen={},out=[];TYPES.forEach(function(g){g.opts.forEach(function(o){if(seen[o.ev])return;seen[o.ev]=1;out.push({ev:o.ev,evn:o.evn,ed:o.ed,rec:o.rec});});});out.sort(function(a,b){return a.ed<b.ed?-1:a.ed>b.ed?1:0;});return out;}
+function phCount(key){return+PHN[key]||0;}
+function camTagText(key){var n=phCount(key);return n?"已记录 🎀 ×"+n:"";}
+function openCam(ctx){
+var shots=[],occ=ctx.ev?{ev:ctx.ev,evn:ctx.evn,ed:ctx.ed,rec:ctx.rec}:null,busy=false,done=false;
+var ov=el("div","pov");ov.setAttribute("role","dialog");ov.setAttribute("aria-modal","true");var pn=el("div","ppn");ov.appendChild(pn);
+function close(){shots.forEach(function(s){URL.revokeObjectURL(s.url);});if(ov.parentNode)ov.parentNode.removeChild(ov);document.body.style.overflow="";}
+ov.addEventListener("click",function(e){if(e.target===ov&&!busy)close();});
+var inp=document.createElement("input");inp.type="file";inp.accept="image/*";inp.multiple=true;inp.style.display="none";ov.appendChild(inp);
+function draw(){pn.innerHTML="";
+var h=el("div","pth");h.appendChild(el("h2",null,"📷 拍下我的穿搭"));var x=el("button","pcl","✕");x.type="button";x.setAttribute("aria-label","关闭");x.onclick=function(){if(!busy)close();};h.appendChild(x);pn.appendChild(h);
+pn.appendChild(el("p","phint","衣服、裤裙、鞋子、配饰都可以拍，一次最多 6 张"));
+if(done){var bn=el("div","pdone","已记录 🎀");pn.appendChild(bn);pn.appendChild(el("p","phint",fbMsgPhoto()));
+var g2=el("div","pgrid");shots.forEach(function(s){var t=el("div","pth1");var im=document.createElement("img");im.alt="";im.src=s.url;t.appendChild(im);g2.appendChild(t);});pn.appendChild(g2);
+pn.appendChild(el("p","ppriv","照片只存进你的私人空间，不会放到公开页面。"));
+var r2=el("div","prow");var again=el("button","fbtn sec","再拍一套");again.type="button";again.onclick=function(){close();openCam({ev:ctx.fixed?ctx.ev:null,evn:ctx.evn,ed:ctx.ed,rec:ctx.rec,fixed:ctx.fixed,key:ctx.key,onDone:ctx.onDone});};
+var ok=el("button","fbtn pri","完成");ok.type="button";ok.onclick=close;r2.appendChild(again);r2.appendChild(ok);pn.appendChild(r2);return;}
+if(ctx.fixed){pn.appendChild(el("div","pfix","这套是："+ctx.evn));}
+else{pn.appendChild(el("div","pfl","哪一天 / 什么场合？"));var pl=el("div","pills");
+camEvents().forEach(function(e){var on=occ&&occ.ev===e.ev;var b=el("button","pill"+(on?" on":""));b.type="button";b.appendChild(el("span",null,e.ed.slice(5).replace("-","/")+" "+e.evn));b.onclick=function(){occ={ev:e.ev,evn:e.evn,ed:e.ed,rec:e.rec};draw();};pl.appendChild(b);});
+OCCS.forEach(function(t){var on=occ&&!occ.ev&&occ.t===t;var b=el("button","pill"+(on?" on":""));b.type="button";b.appendChild(el("span",null,t));b.onclick=function(){occ={t:t};draw();};pl.appendChild(b);});pn.appendChild(pl);}
+var ta=document.createElement("textarea");ta.className="pnote";ta.maxLength=200;ta.rows=2;ta.placeholder="想说的话（选填），比如：今天去 jazz 课穿的";ta.value=ctx._note||"";ta.oninput=function(){ctx._note=ta.value;};pn.appendChild(ta);
+var g=el("div","pgrid");shots.forEach(function(s,i){var t=el("div","pth1");var im=document.createElement("img");im.alt="第"+(i+1)+"张";im.src=s.url;t.appendChild(im);var d=el("button","prm","✕");d.type="button";d.setAttribute("aria-label","删除这张");d.onclick=function(){URL.revokeObjectURL(s.url);shots.splice(i,1);draw();};t.appendChild(d);g.appendChild(t);});
+if(shots.length<PMAX){var add=el("button","padd",shots.length?"＋":"📷");add.type="button";add.setAttribute("aria-label","拍照或选照片");add.onclick=function(){inp.value="";inp.click();};g.appendChild(add);}pn.appendChild(g);
+pn.appendChild(el("div","pcnt",shots.length?"已选 "+shots.length+" / "+PMAX+" 张":"点 📷 拍照，或从相册选"));
+var err=el("div","perr");err.id="perr";pn.appendChild(err);
+var r=el("div","prow");var cn=el("button","fbtn sec","取消");cn.type="button";cn.onclick=function(){if(!busy)close();};
+var sb=el("button","fbtn pri",busy?"处理中…":"记录下来");sb.type="button";sb.disabled=busy||!shots.length||!occ;sb.onclick=submit;r.appendChild(cn);r.appendChild(sb);pn.appendChild(r);}
+function perr(m){var e=document.getElementById("perr");if(e)e.textContent=m;}
+inp.addEventListener("change",function(){var fl=Array.prototype.slice.call(inp.files||[]),room=PMAX-shots.length;if(!fl.length)return;if(fl.length>room){fl=fl.slice(0,room);}
+busy=true;draw();var i=0;(function nx(){if(i>=fl.length){busy=false;draw();if(room<(inp.files||[]).length)perr("一次最多 6 张，多的没加进来");return;}
+downscale(fl[i++],function(bl){if(bl&&bl.size>0)shots.push({blob:bl,url:URL.createObjectURL(bl)});else perr("有一张照片读不出来，换一张试试");nx();});})();});
+function submit(){if(busy||!shots.length||!occ)return;var id=uuid(),short=id.slice(0,6),now=new Date(),ts=ptIso(now),meta,key;
+if(ctx.fixed){meta={rec_id:ctx.rec+"-P-"+short,event_id:ctx.ev,occasion:ctx.evn};key=ctx.ev;}
+else if(occ.ev){meta={rec_id:"P-"+occ.ed.replace(/-/g,"")+"-"+short,event_id:occ.ev,occasion:occ.evn};key=occ.ev;}
+else{meta={rec_id:"P-"+ts.slice(0,10).replace(/-/g,"")+"-"+short,occasion:occ.t};key="_g";}
+meta.click_id=id;meta.timestamp_pt=ts;meta.note=(ctx._note||"").trim();meta.photo_count=shots.length;meta.source="wardrobe-page";meta.device=deviceStr();meta.page_version=PV;
+var job={click_id:id,meta:meta,blobs:shots.map(function(s){return s.blob;}),done:[]};
+busy=true;draw();pPut(job,function(){busy=false;done=true;PHN[key]=phCount(key)+1;phSave();if(ctx.onDone)ctx.onDone(key);try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist();}catch(e){}draw();pFlush();});}
+ctx.fixed=ctx.fixed||false;document.body.appendChild(ov);document.body.style.overflow="hidden";draw();}
+function fbMsgPhoto(){if(!FBKEY)return"还没打开专属链接：照片先存在这台手机里，用专属链接打开一次就会自动上传 ♡";if(fbBad)return"专属链接的钥匙好像失效了，请用最新的专属链接再打开一次";return"照片会在后台自动上传，网络不好也会排队补发。";}
+(function(){var f=el("button","pfab","📷");f.type="button";f.setAttribute("aria-label","拍下我的穿搭");f.appendChild(el("span",null," 拍穿搭"));var t=el("div","pfabt");t.id="pfabt";
+f.onclick=function(){openCam({fixed:false,onDone:function(){t.textContent="已记录 🎀";t.className="pfabt show";clearTimeout(t._t);t._t=setTimeout(function(){t.className="pfabt";},3500);}});};document.body.appendChild(f);document.body.appendChild(t);})();
 /* ---------- 换一套 after A2: shuffle a NEW outfit from this event's pool (rules + pools built into PO at build time) ---------- */
 function fnv(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)>>>0;}return("00000000"+h.toString(16)).slice(-8);}
 function shash(ids){return fnv(ids.slice().sort().join(";")).slice(0,6);}
@@ -393,6 +490,8 @@ var fr=el("div","fbrow"),ab=el("button","fbtn pri"),sb=el("button","fbtn sec");a
 var on=FB.adopted[o.ev]===v.rec;ab.className="fbtn pri"+(on?" done":"");ab.textContent=on?"🎀 已采纳":"采纳";ab.setAttribute("aria-pressed",on?"true":"false");
 sb.textContent="换一套";
 fr.appendChild(ab);fr.appendChild(sb);c.appendChild(fr);
+var cr=el("div","camrow"),cbn=el("button","fbtn cam","📷 拍下我的穿搭"),ctg=el("span","camtag",camTagText(o.ev));cbn.type="button";cbn.setAttribute("aria-label","拍下我的穿搭");
+cbn.onclick=function(e){e.stopPropagation();openCam({fixed:true,ev:o.ev,evn:o.evn,ed:o.ed,rec:V[0].rec,onDone:function(k){ctg.textContent=camTagText(k);}});};cr.appendChild(cbn);cr.appendChild(ctg);c.appendChild(cr);
 var fn=el("div","fbn");fn.setAttribute("aria-live","polite");c.appendChild(fn);
 if(vi>0){var bkr=el("div","fbbk");var bk=el("button","fbback","↺ 回到主推荐");bk.type="button";bk.onclick=function(e){e.stopPropagation();c._vi=0;FB.cur[o.ev]=0;fbSave();paint(c,o,N);c.dispatchEvent(new Event("repaint"));};bkr.appendChild(bk);c.appendChild(bkr);}
 ab.onclick=function(e){e.stopPropagation();if(FB.adopted[o.ev]===v.rec)return;FB.adopted[o.ev]=v.rec;fbSave();ab.className="fbtn pri done";ab.textContent="🎀 已采纳";ab.setAttribute("aria-pressed","true");fbLog(o,v.rec,"adopt","",v.items);fbNote(fn,"已采纳");};
