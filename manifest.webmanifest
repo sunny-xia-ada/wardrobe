@@ -1,7 +1,6 @@
 {
  "name": "一丹的粉粉衣橱",
  "short_name": "一丹的衣橱",
- "start_url": "./",
  "scope": "./",
  "display": "standalone",
  "background_color": "#F7B7C5",
