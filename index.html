@@ -341,7 +341,7 @@ var XSVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-widt
 var HSVG='<svg viewBox="0 0 24 22" fill="currentColor"><path d="M12 21C5 15.5 2 11.5 2 7.6 2 4.6 4.3 2.5 7 2.5c2.2 0 3.8 1.2 5 3 1.2-1.8 2.8-3 5-3 2.7 0 5 2.1 5 5.1 0 3.9-3 7.9-10 13.4z"/></svg>';
 
 /* ---------- feedback (采纳 / 换一套) ---------- */
-var PV="20261112-d5",FB_API="https://yidan-outfit-feedback.vercel.app/api/click",KKEY="yidanOutfitKey_v1",FSK="yidanOutfitState_v1",FQ="yidanOutfitQueue_v1";
+var PV="20261112-d6",FB_API="https://yidan-outfit-feedback.vercel.app/api/click",KKEY="yidanOutfitKey_v1",FSK="yidanOutfitState_v1",FQ="yidanOutfitQueue_v1";
 function isStandalone(){try{return window.navigator.standalone===true||(window.matchMedia&&window.matchMedia("(display-mode: standalone)").matches);}catch(e){return false;}}
 var FBKEY="";
 (function(){try{var u=new URL(location.href),k=u.searchParams.get("k");if(k){try{localStorage.setItem(KKEY,k);}catch(e){}}
@@ -586,4 +586,21 @@ document.getElementById("reset").addEventListener("click",function(){cls="all";c
 document.getElementById("total").textContent=ITEMS.length;TYPES.forEach(function(g){NOPT+=g.opts.length;});
 document.getElementById("peek").src=ILL.bunny_peek;document.getElementById("hang").src=ILL.bear_hanger;
 adorn(document.querySelector('.top'),['bw-tl','hp3']);adorn(document.querySelector('.wdv .panel'),['bw-tc','hp2','hp3']);applyTheme();renderEvents();renderWardrobe();drawTabs();fbFlush();document.getElementById("sub").textContent=subText();
+</script><script>
+/* auto-update: home-screen app resumes without reloading, so poll version.json */
+(function(){var PV0="20261112-d6",K="yidanAutoUpd",busy=false,last=0;
+function base(){return location.origin+location.pathname.replace(/[^\/]*$/,"");}
+function blocked(){var a=document.activeElement;if(a&&(a.tagName==="INPUT"||a.tagName==="TEXTAREA")&&a.value)return true;if(document.querySelector(".pov"))return true;if(document.querySelector(".drag"))return true;return false;}
+function check(force){if(busy||document.visibilityState==="hidden")return;var now=Date.now();if(!force&&now-last<20000)return;last=now;busy=true;
+fetch(base()+"version.json?t="+now,{cache:"no-store"}).then(function(r){return r.ok?r.json():null;}).then(function(j){busy=false;var v=j&&j.v;if(!v||v===PV0)return;
+var t=0;try{var o=JSON.parse(sessionStorage.getItem(K)||"{}");if(o.v===v)t=o.t||0;}catch(e){}
+if(now-t<120000)return; /* already tried this version in the last 2 min (CDN lag): don't loop */
+if(blocked()){setTimeout(function(){check(true);},15000);return;}
+try{sessionStorage.setItem(K,JSON.stringify({v:v,t:now}));}catch(e){}
+location.replace(base()+"?v="+encodeURIComponent(v));}).catch(function(){busy=false;});}
+document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")check(true);});
+window.addEventListener("pageshow",function(){check(true);});
+window.addEventListener("focus",function(){check(false);});
+setInterval(function(){check(true);},180000);
+check(true);})();
 </script></body></html>
