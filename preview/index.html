@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#121014"><meta name="robots" content="noindex, nofollow"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="一丹的衣橱"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="../apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="icon" type="image/png" sizes="48x48" href="../favicon-48.png"><link rel="shortcut icon" href="../favicon.png"><title>一丹的衣橱</title>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#FFF8FA"><meta name="robots" content="noindex, nofollow"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="一丹的衣橱"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" href="../apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="icon" type="image/png" sizes="48x48" href="../favicon-48.png"><link rel="shortcut icon" href="../favicon.png"><title>一丹的衣橱</title>
 <script>(function(){var v="events";try{if(localStorage.getItem("yidanWardrobeView")==="wardrobe")v="wardrobe"}catch(e){}document.documentElement.setAttribute("data-view",v)})()</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@700&family=Inter+Tight:wght@800;900&family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@900&display=swap" rel="stylesheet"><style>
 :root{--bow:#F9A8C6;--bg:#FFF1F6;--dot:#F7D2E1;--line:#F6C4D8;--deep:#D6457F;--soft:#FFDCEA;--ink:#4A1730;--muted:#8E6B7E;--chip:#FFF0F6}
@@ -262,7 +262,7 @@ a.card:hover{border-color:var(--deep);transform:translateY(-2px)}
 .pdone{font-size:20px;font-weight:900;color:var(--deep);text-align:center;margin:6px 0}
 .ppriv{font-size:12px;color:var(--muted);text-align:center;margin:10px 0 0}
 
-/* ===================== BLACK-PINK SIMPLE SKIN ===================== */
+/* ===================== BLACK-PINK SIMPLE SKIN (light theme overrides at the end) ===================== */
 html:root{--bow:#FF5BA8;--bg:#121014;--dot:#2A1A22;--line:#4A2A3A;--deep:#FF5BA8;--soft:#3A1A2A;--ink:#FFF6F8;--muted:#C9A0B0;--chip:#22161C;--card:#1C1418;--hot:#FF5BA8;--hot2:#FF3EA5;--blk:#1A0A10}
 html{background:#121014}
 body{background:#121014;background-image:none;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC","Microsoft YaHei",sans-serif}
@@ -406,6 +406,66 @@ html[data-view=events] .pfab,html[data-view=events] .pfabt{display:none}
 .sclose{position:absolute;right:12px;top:12px;width:32px;height:32px;border-radius:50%;border:0;background:#2A1A22;color:#C9A0B0;font-size:18px;cursor:pointer}
 @media(prefers-reduced-motion:reduce){.speek,.scard.flip .sphw,.scard.nx .sphw,.scard.pv .sphw,.sth{animation:none!important}}
 .zsec{font:800 13px -apple-system,"PingFang SC",sans-serif;color:#FF8CC2;margin:4px 2px 10px}
+
+/* ===================== LIGHT THEME (cream + near-black + hot pink). Contrast vs #FFF8FA: ink 17.3, muted #6B4A58 7.3, pink text #B0125F 6.5; white on #D81B72 4.9 ===================== */
+html:root{--bow:#D81B72;--bg:#FFF8FA;--dot:#FFE0EE;--line:#1A1418;--deep:#D81B72;--soft:#FFE0EE;--ink:#1A1418;--muted:#6B4A58;--chip:#FFFFFF;--card:#FFFFFF;--hot:#D81B72;--hot2:#B0125F;--blk:#1A1418}
+html{background:#FFF8FA}
+body{background:#FFF8FA;color:#1A1418}
+#q{background:#fff;color:#1A1418;border-color:#1A1418}
+.card .img,.img{background:#FFF0F5}
+.pill{background:#fff;color:#1A1418;border-color:#1A1418}
+.pill .cnt{background:#FFE0EE;color:#1A1418}
+.pill.on{background:#1A1418;border-color:#1A1418;color:#fff}.pill.on .cnt{background:#D81B72;color:#fff}
+.chip{background:#FFE0EE;color:#1A1418}
+.prow{background:#fff}
+.pov{background:rgba(26,20,24,.45)}
+.fbtn.pri{background:#D81B72;border-color:#D81B72;color:#fff}
+.fbtn.sec{background:#fff;color:#1A1418}
+.pfab{background:#1A1418;border:2px solid #D81B72;box-shadow:0 5px 0 #B0125F;color:#fff}
+.pfabt{background:#fff;color:#B0125F}
+.panel,.card,.ppn,.wnote,.gh{background:#fff;border-color:#1A1418}
+.ztop{background:#FFF8FA}
+.ztop .zb{color:#1A1418}
+.ztop .zb span:first-of-type:before{color:#D81B72}
+.zprev{background:#1A1418;color:#FFD3E6}
+.zseg button{color:#6B4A58}
+.zseg button.on{background:#1A1418;color:#fff}
+.sflt{background:#fff;color:#1A1418;box-shadow:inset 0 0 0 1.5px #1A1418}
+.sflt.on{background:#1A1418;color:#fff}
+.sch{background:#fff;color:#1A1418;box-shadow:inset 0 0 0 1.5px #1A1418}
+.sch i{color:#6B4A58}
+.sch.on{background:#1A1418;color:#fff;box-shadow:none}.sch.on i{color:#FFB3D6}
+.sph{background:#fff;box-shadow:0 0 0 1.5px #1A1418,0 18px 34px -18px rgba(216,27,114,.45)}
+.sinfo{background:linear-gradient(to top,rgba(26,20,24,.9) 0,rgba(26,20,24,.72) 55%,rgba(26,20,24,0))}
+.swhen{color:#FFE0EE}
+.sbadge{background:#D81B72}
+.stag{background:rgba(26,20,24,.82)}
+.slike{background:rgba(26,20,24,.82)}.slike.on{background:#D81B72}
+.sth{color:#1A1418}
+.sthi{background:#fff;box-shadow:0 0 0 1.5px #1A1418}
+.sthi .zph0,.ssi .zph0{color:#B0125F}
+.sline{color:#6B4A58}.sline b{color:#1A1418}
+.sline button{color:#B0125F}
+.scam{background:#fff;color:#1A1418;box-shadow:inset 0 0 0 1.5px #1A1418}
+.scamtag{background:#1A1418;color:#FFD3E6}
+.sadopt{background:#1A1418;color:#fff;box-shadow:none}
+.sadopt.done{background:#FFE0EE;color:#1A1418;box-shadow:inset 0 0 0 1.5px #1A1418}
+.sswap{background:#D81B72;color:#fff;box-shadow:0 8px 20px -8px rgba(216,27,114,.7)}
+.scard .fbn{color:#B0125F}
+.smorebox{background:#fff;box-shadow:inset 0 0 0 1.5px #1A1418;color:#1A1418}
+.smorebox b{color:#B0125F}.smt{color:#1A1418}
+.sextra summary{color:#6B4A58}
+.ztail .wnote,.ztail .panel{background:#fff;border:1.5px solid #1A1418}
+.ztail .sd{color:#6B4A58}.ztail h2{color:#1A1418}
+.zsec{color:#B0125F}
+.zempty{color:#6B4A58}
+.ssheetbg.show{background:rgba(26,20,24,.4)}
+.ssheet{background:#fff;box-shadow:0 -1.5px 0 #1A1418}
+.sgrab{background:#E8D5DD}
+.ssi{background:#FFF0F5;box-shadow:inset 0 0 0 1.5px #1A1418}
+.sst em{color:#B0125F}.sst b{color:#1A1418}.sst small{color:#8A5A00}
+.sst a{background:#1A1418;color:#fff}
+.sclose{background:#FFE0EE;color:#1A1418}
 
 </style></head><body><div class="wrap">
 <header class="ztop"><div class="zb"><img id="zbun0" alt="" width="30" height="36"><span>一丹的衣橱</span><span class="zprev">试用版</span></div><div class="zseg" id="tabs"></div></header>
