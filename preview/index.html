@@ -262,7 +262,7 @@ a.card:hover{border-color:var(--deep);transform:translateY(-2px)}
 .pdone{font-size:20px;font-weight:900;color:var(--deep);text-align:center;margin:6px 0}
 .ppriv{font-size:12px;color:var(--muted);text-align:center;margin:10px 0 0}
 
-/* ===================== BLACK-PINK COMBO SKIN (magazine cover + scrapbook + bow folder) ===================== */
+/* ===================== BLACK-PINK SIMPLE SKIN ===================== */
 html:root{--bow:#FF5BA8;--bg:#121014;--dot:#2A1A22;--line:#4A2A3A;--deep:#FF5BA8;--soft:#3A1A2A;--ink:#FFF6F8;--muted:#C9A0B0;--chip:#22161C;--card:#1C1418;--hot:#FF5BA8;--hot2:#FF3EA5;--blk:#1A0A10}
 html{background:#121014}
 body{background:#121014;background-image:none;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC","Microsoft YaHei",sans-serif}
@@ -295,149 +295,6 @@ body{background:#121014;background-image:none;color:var(--ink);font-family:-appl
 .zseg button b{font:900 11px "Inter Tight",sans-serif;margin-left:4px;opacity:.8}
 .zseg button.on{background:var(--hot);color:#fff;box-shadow:0 3px 0 #8B1A4A}
 
-/* contents strip (events) + scene filter */
-.zstripw{position:relative;padding:0 0 10px}
-.zstrip{display:flex;gap:8px;overflow-x:auto;padding:2px 12px 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.zstrip::-webkit-scrollbar{display:none}
-.zch{flex:none;display:flex;flex-direction:column;align-items:flex-start;gap:2px;border:0;cursor:pointer;background:#1C1418;color:#FFF6F8;border-radius:12px;padding:6px 10px 7px;box-shadow:0 0 0 1.5px #3A2430;max-width:150px;text-align:left}
-.zch i{font:900 10px/1 "Inter Tight",sans-serif;letter-spacing:.1em;color:var(--hot);font-style:normal}
-.zch span{font:800 12.5px/1.2 -apple-system,"PingFang SC",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:130px}
-.zch.on{background:var(--hot);box-shadow:0 0 0 2px #fff,0 4px 0 #8B1A4A}.zch.on i{color:#1A0A10}
-.zch.flt{background:#FFE45C;color:#1A0A10;box-shadow:0 3px 0 #8a7a20}.zch.flt i{color:#1A0A10}
-.zscn{display:none;flex-wrap:wrap;gap:7px;padding:4px 12px 10px}
-.zscn.show{display:flex}
-.zscn .pill{min-height:36px;font-size:13.5px;padding:0 6px 0 12px}
-
-/* ===== COVER ===== */
-.zcv{position:relative;background:#121014;overflow:hidden;touch-action:pan-y;padding-bottom:46px;box-shadow:0 28px 48px -16px rgba(0,0,0,.75);z-index:2}
-.zmast{position:absolute;top:8px;left:12px;right:12px;z-index:4;pointer-events:none}
-.zmast small{display:flex;justify-content:space-between;font:800 10px/1 "Inter Tight",sans-serif;letter-spacing:.2em;color:var(--hot)}
-.zmast h1{margin:4px 0 0;font:400 108px/.8 Anton,Impact,"Arial Narrow",sans-serif;color:var(--hot);display:flex;justify-content:space-between;text-shadow:3px 3px 0 #fff}
-.zmast h1 span{display:inline-block;animation:zdrop .8s cubic-bezier(.3,1.7,.5,1) both}
-@keyframes zdrop{from{transform:translateY(-60px) rotate(-12deg);opacity:0}}
-.zph{position:relative;margin-top:96px;height:410px;background:#1A0A10;overflow:hidden;z-index:2;border-top:4px solid #fff;border-bottom:4px solid #fff}
-.zph img{width:100%;height:100%;object-fit:cover;object-position:center 25%;animation:zzoom 1.4s cubic-bezier(.2,.8,.2,1) both;pointer-events:none;-webkit-user-drag:none}
-.zph .zno{display:flex;align-items:center;justify-content:center;height:100%;background:repeating-linear-gradient(45deg,#2A1420 0 14px,#1A0A10 14px 28px)}
-.zph .zno img{width:120px;height:auto;object-fit:contain;animation:none}
-@keyframes zzoom{from{transform:scale(1.18)}}
-.zlines{position:absolute;left:10px;top:150px;z-index:5;display:flex;flex-direction:column;gap:8px;max-width:232px}
-.zln{display:flex;flex-direction:column;align-items:flex-start}
-.zln i{font:800 10px "Inter Tight",-apple-system,sans-serif;letter-spacing:.12em;color:#fff;background:var(--hot);padding:2px 6px;border-radius:3px;font-style:normal}
-.zln b{font:400 19px/1.06 Anton,Impact,-apple-system,"PingFang SC",sans-serif;text-transform:uppercase;padding:3px 7px;margin-top:2px;color:#1A0A10;background:#FFE45C;transform:rotate(-2deg);box-shadow:3px 3px 0 #1A0A10;animation:zpop .7s steps(6,end) both;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:break-word}
-.zln:nth-child(2) b{background:#fff;transform:rotate(1.5deg)}
-.zln:nth-child(3) b{background:#FFB3D1;transform:rotate(-1deg)}
-.zln:nth-child(4) b{background:#C9F2FF;transform:rotate(1deg)}
-@keyframes zpop{0%{clip-path:inset(0 100% 0 0);background:#FF3EA5;color:#fff}40%{clip-path:inset(0 40% 0 0);background:#1A0A10;color:#FFE45C}70%{transform:rotate(4deg) scale(1.08)}100%{clip-path:inset(0)}}
-.zbadge{position:absolute;right:14px;top:112px;width:94px;height:94px;border-radius:50%;background:var(--hot);color:#fff;z-index:6;display:flex;flex-direction:column;align-items:center;justify-content:center;font:900 12px/1.15 "Inter Tight",-apple-system,"PingFang SC",sans-serif;letter-spacing:.05em;box-shadow:0 0 0 4px #fff,0 8px 18px -6px var(--hot);animation:zwob 3s ease-in-out infinite;text-align:center}
-.zbadge big{font:400 29px/1 Anton,Impact,sans-serif;letter-spacing:0}
-@keyframes zwob{50%{transform:rotate(10deg) scale(1.05)}}
-.zinset{position:absolute;right:12px;top:350px;width:112px;background:#fff;padding:6px 6px 22px;transform:rotate(5deg);box-shadow:0 10px 24px -8px rgba(0,0,0,.55);z-index:5}
-.zinset img{width:100%;height:112px;object-fit:cover;display:block;pointer-events:none}
-.zinset b{position:absolute;bottom:3px;left:0;right:0;text-align:center;font:700 15px Caveat,cursive;color:var(--hot)}
-.zissue{position:absolute;left:14px;top:480px;z-index:6;background:#fff;border:2px solid var(--hot);color:#1A0A10;font:900 11px -apple-system,"PingFang SC",sans-serif;padding:4px 10px;border-radius:999px;letter-spacing:.06em}
-.zlike{position:absolute;right:14px;top:470px;z-index:7;width:44px;height:44px;border-radius:50%;border:0;background:#1A0A10;color:#FFB3D1;box-shadow:0 0 0 2px var(--hot);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.zlike svg{width:22px;height:20px}
-.zlike.on{background:var(--hot);color:#fff;box-shadow:0 0 0 2px #fff}
-.zhead{position:relative;z-index:4;padding:14px 16px 0}
-.zkick{font:800 12px -apple-system,"Inter Tight","PingFang SC",sans-serif;letter-spacing:.08em;color:var(--hot)}
-.zhead h2{font:900 44px/1.05 "Noto Serif SC","Songti SC","Noto Serif CJK SC",serif;margin:3px 0 6px;letter-spacing:-.02em;color:#FFF6F8;word-break:break-word;padding-right:70px}
-.zhead h2.m{font-size:34px}.zhead h2.s{font-size:27px}
-.zpal{font-size:13px;font-weight:700;color:#C9A0B0;line-height:1.5;padding-right:70px}
-.zpeekh{position:absolute;bottom:-4px;right:-18px;width:118px;height:118px;border-radius:50%;background:radial-gradient(circle,#FFD6E6 0%,#FFD6E6cc 52%,#FFD6E600 72%);z-index:2;pointer-events:none}
-.zpeek{position:absolute;bottom:-4px;right:-10px;width:80px;z-index:3;transform:scaleX(-1) rotate(-6deg);animation:zpk 2.6s ease-in-out infinite;pointer-events:none}
-@keyframes zpk{50%{transform:scaleX(-1) rotate(4deg) translateY(-6px)}}
-.zhint{position:absolute;left:0;right:90px;bottom:8px;z-index:4;text-align:center;font:800 11px/1 -apple-system,"Inter Tight","PingFang SC",sans-serif;letter-spacing:.12em;color:var(--hot);animation:zbob 2.2s ease-in-out infinite;pointer-events:none}
-.zhint span{display:block;margin-top:3px;font-size:13px}
-@keyframes zbob{50%{transform:translateY(5px)}}
-.zcv.flip{animation:zflip .55s cubic-bezier(.4,0,.2,1)}
-.zcv.nx{animation:znx .45s cubic-bezier(.3,.9,.3,1)}.zcv.pv{animation:zpv .45s cubic-bezier(.3,.9,.3,1)}
-@keyframes zflip{0%{transform:perspective(900px) rotateY(0)}50%{transform:perspective(900px) rotateY(-80deg);opacity:.3}}
-@keyframes znx{from{transform:translateX(60px);opacity:0}}@keyframes zpv{from{transform:translateX(-60px);opacity:0}}
-.zcv.drag{transition:none}
-
-/* ===== SCRAPBOOK ===== */
-.zbook{position:relative;padding:14px 14px 16px 30px;background:#161018;background-image:linear-gradient(rgba(255,91,168,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(255,91,168,.13) 1px,transparent 1px);background-size:22px 22px;overflow:hidden}
-.zbook:before{content:"";position:absolute;left:10px;top:0;bottom:0;width:16px;background:radial-gradient(circle,var(--hot) 4.5px,transparent 5.5px) 0 18px/16px 40px;z-index:1}
-.ztape{position:absolute;height:22px;width:90px;opacity:.88;z-index:6;pointer-events:none}
-.zt1{background:repeating-linear-gradient(45deg,#FFB3D1 0 8px,#FF5BA8 8px 16px)}
-.zt2{background:radial-gradient(circle,#fff 2.5px,transparent 3px) 0 0/10px 10px,#3A2A22}
-.zt3{background:repeating-linear-gradient(90deg,#FFE9A8 0 10px,#FFF4CF 10px 20px)}
-.zt4{background:repeating-linear-gradient(45deg,#1A0A10 0 7px,#FF5BA8 7px 14px)}
-.zbtop{position:relative;min-height:116px;padding-right:138px}
-.zbk{font:400 26px/1 "ZCOOL KuaiLe",-apple-system,"PingFang SC",sans-serif;color:var(--hot);transform:rotate(-2deg);margin:4px 0 0}
-.zbk small{display:block;font:700 16px Caveat,cursive;color:#FFB3D1;margin:3px 0 0 4px}
-.zbk2{font:600 12px/1.45 -apple-system,"PingFang SC",sans-serif;color:#C9A0B0;margin-top:8px}
-.znote{position:absolute;right:4px;top:2px;width:128px;background:#FFE7F0;color:#1A0A10;padding:8px 9px 10px;transform:rotate(3deg);box-shadow:0 8px 14px -8px rgba(0,0,0,.5);font:400 12px/1.35 "ZCOOL KuaiLe",-apple-system,"PingFang SC",sans-serif;z-index:5}
-.znote i{font-style:normal;color:#E0337F}
-.zboard{position:relative;margin:6px 0 4px;z-index:4}
-.zst{position:absolute;background:#fff;padding:5px 5px 0;border-radius:14px;box-shadow:0 0 0 2px #fff,0 10px 18px -8px rgba(0,0,0,.55);touch-action:pan-y;cursor:grab;z-index:4;animation:zland .6s cubic-bezier(.3,1.6,.5,1) both;display:flex;flex-direction:column;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;transition:box-shadow .2s}
-.zst img{width:100%;height:86px;object-fit:cover;border-radius:10px;pointer-events:none;background:#eee;flex:none;display:block;-webkit-user-drag:none}
-.zst .zph0{height:86px;border-radius:10px;background:#FFE7F0;display:flex;align-items:center;justify-content:center;font:900 22px -apple-system,sans-serif;color:var(--hot)}
-.zst .cap{display:block;padding:4px 3px 7px;font:400 10.5px/1.25 "ZCOOL KuaiLe",-apple-system,"PingFang SC",sans-serif;color:#1A0A10;text-align:center;pointer-events:none;word-break:break-word}
-.zst .cap span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.zst .cap em{display:block;font:700 13px Caveat,-apple-system,"PingFang SC",sans-serif;color:var(--hot);font-style:normal}
-.zst .zgrip{position:absolute;top:-10px;right:-10px;width:30px;height:30px;border-radius:50%;background:#1A0A10;color:#FFB3D1;border:2px solid var(--hot);font-size:14px;line-height:26px;text-align:center;touch-action:none;z-index:3;cursor:grab}
-.zst.arm{box-shadow:0 0 0 3px var(--hot),0 10px 18px -8px rgba(0,0,0,.55)}
-.zst.drag{transform:scale(1.08) rotate(0)!important;box-shadow:0 0 0 3px var(--hot),0 22px 30px -10px rgba(0,0,0,.6);z-index:9;cursor:grabbing;animation:none}
-@keyframes zland{from{transform:translateY(-120px) rotate(30deg) scale(.6);opacity:0}}
-.zdrag-tip{font:700 14px Caveat,-apple-system,"PingFang SC",sans-serif;color:#FFB3D1;text-align:right;margin:0 4px 6px;font-size:12px}
-
-/* folder */
-.zstage{position:relative;height:330px;margin:0 auto;perspective:1100px;z-index:3;max-width:340px}
-.zcards{position:absolute;z-index:1;left:50%;top:0;width:250px;height:300px;margin-left:-125px}
-.zcd{position:absolute;left:0;top:0;width:128px;height:176px;background:#fff;color:#1A0A10;border-radius:14px;padding:6px;box-shadow:0 10px 24px -10px rgba(0,0,0,.5);transition:transform .7s cubic-bezier(.3,1.4,.4,1);text-decoration:none;display:block}
-.zcd img,.zcd .zph0{width:100%;height:120px;object-fit:cover;border-radius:9px;background:#eee;display:block;pointer-events:none}
-.zcd .zph0{display:flex;align-items:center;justify-content:center;font:900 20px sans-serif;color:var(--hot);background:#FFE7F0}
-.zcd b{display:block;font:800 11px/1.25 -apple-system,"PingFang SC",sans-serif;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.zcd span{display:block;font:600 10px -apple-system,"PingFang SC",sans-serif;color:#8E6B7E;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.zcd span em{color:#C2386F;font-style:normal}
-.zcd.in{transform:translate(60px,130px)!important}
-.zstage.open .zcd{margin-top:-34px}
-.zfd{position:absolute;z-index:2;left:50%;top:110px;width:300px;height:214px;margin-left:-150px;transform-origin:bottom;transform-style:preserve-3d;pointer-events:none}
-.zback{position:absolute;inset:0;border-radius:22px;background:#C43070;z-index:0}
-.zback:before{content:"";position:absolute;left:18px;top:-18px;width:110px;height:30px;border-radius:12px 12px 0 0;background:#C43070}
-.zfront{position:absolute;inset:0;border-radius:22px;background:linear-gradient(160deg,#FF8FBF,#FF3EA5);z-index:3;transform-origin:bottom;transform:rotateX(-14deg);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 20px 34px -16px rgba(0,0,0,.7);padding:58px 20px 14px;color:#fff;transition:transform .6s cubic-bezier(.3,1.4,.4,1);cursor:pointer;pointer-events:auto}
-.zstage.open .zfront{transform:rotateX(-36deg)}
-.zfront h3{margin:0;font:900 17px/1.3 -apple-system,"PingFang SC",sans-serif;text-shadow:0 2px 0 rgba(120,10,50,.35);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.zfront p{margin:4px 0 0;font:700 12px/1.4 -apple-system,"PingFang SC",sans-serif;opacity:.95}
-.zears{position:absolute;z-index:0;left:-6px;top:52px;width:56px;transform:scaleX(-1);pointer-events:none}
-.zbow{position:absolute;right:14px;top:-28px;width:86px;height:52px;z-index:5;pointer-events:none;transform:rotate(8deg)}
-.zbow i{position:absolute;display:block}
-.zbow .l,.zbow .r{top:6px;width:40px;height:30px;background:#FFF6F8;border-radius:50% 50% 42% 42%;box-shadow:0 3px 0 #C43070}
-.zbow .l{left:0;transform:rotate(-30deg)}.zbow .r{right:0;transform:rotate(30deg)}
-.zbow .k{left:50%;top:12px;width:18px;height:20px;margin-left:-9px;background:var(--hot);border-radius:6px;z-index:2;box-shadow:0 3px 0 #C43070}
-.zbow .t{left:50%;top:28px;width:10px;height:22px;margin-left:-5px;background:#FFF6F8;clip-path:polygon(50% 0,100% 100%,0 100%);filter:drop-shadow(0 2px 0 #C43070)}
-.zdots{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:4px;position:relative;z-index:4;padding:0 4px}
-.zdt{width:42px;height:42px;border-radius:50%;padding:0;border:0;box-shadow:0 0 0 3px #fff,0 6px 12px -6px rgba(0,0,0,.5);position:relative;overflow:hidden;cursor:pointer}
-.zdt i{position:absolute;inset:0}
-.zdt small{position:absolute;inset:auto 0 2px 0;font:900 9px/1 "Inter Tight",sans-serif;color:#fff;text-shadow:0 1px 2px #000;text-align:center}
-.zdt.on{box-shadow:0 0 0 3px #fff,0 0 0 6px var(--hot)}
-.zdl{text-align:center;font:800 12px -apple-system,"PingFang SC",sans-serif;color:#C9A0B0;margin-top:9px}
-.zdl b{color:var(--hot)}
-/* stamp + actions */
-.zdock{position:relative;margin-top:8px;min-height:150px}
-.zstamp{position:absolute;right:0;top:4px;width:106px;height:106px;border-radius:50%;border:0;background:var(--hot);color:#fff;font:400 20px/1.15 "ZCOOL KuaiLe",-apple-system,"PingFang SC",sans-serif;box-shadow:inset 0 0 0 5px var(--hot),inset 0 0 0 8px #fff,0 10px 0 #8B1A4A;transform:rotate(-8deg);z-index:8;transition:transform .12s,box-shadow .12s;cursor:pointer}
-.zstamp:active,.zstamp.press{transform:rotate(-8deg) translateY(8px) scale(.95);box-shadow:inset 0 0 0 5px var(--hot),inset 0 0 0 8px #fff,0 2px 0 #8B1A4A}
-.zacts{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:9px;z-index:5;padding-right:118px}
-.zact{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;border:0;background:#1A0A10;color:#FFF6F8;font:800 13.5px -apple-system,"PingFang SC",sans-serif;box-shadow:0 0 0 2px var(--hot),0 5px 0 #8B1A4A;width:max-content;cursor:pointer}
-.zact:active{transform:translateY(3px);box-shadow:0 0 0 2px var(--hot),0 2px 0 #8B1A4A}
-.zact.done{background:var(--hot);color:#fff;box-shadow:0 0 0 2px #fff,0 5px 0 #8B1A4A}
-.zact.ghost{background:transparent;box-shadow:0 0 0 1.5px #6A3A50;color:#C9A0B0;min-height:32px;font-size:12.5px}
-.zcamtag{font:800 12px -apple-system,sans-serif;color:#FFB3D1;margin-left:4px}
-.zcnt{margin-top:12px;font:400 14px "ZCOOL KuaiLe",-apple-system,"PingFang SC",sans-serif;color:#C9A0B0;transform:rotate(-2deg);white-space:nowrap}
-.zcnt b{color:var(--hot)}
-.zbun{position:absolute;right:104px;top:84px;width:62px;z-index:4;pointer-events:none}
-.zstrip-ill{position:absolute;left:2px;top:auto;bottom:250px;width:72px;transform:rotate(-16deg);z-index:3;pointer-events:none;opacity:.85}
-.zbook .fbn{color:#FFB3D1;background:#2A1420;border-color:#6A3A50;margin-top:8px}
-.zwhy{margin-top:12px;background:#FFF6F8;color:#1A0A10;border-radius:16px;padding:0;transform:rotate(-.6deg);box-shadow:0 10px 18px -10px rgba(0,0,0,.6)}
-.zwhy summary{list-style:none;cursor:pointer;padding:12px 14px;font:800 14px -apple-system,"PingFang SC",sans-serif;color:#C2386F}
-.zwhy summary::-webkit-details-marker{display:none}
-.zwhy summary:after{content:" ▾"}.zwhy[open] summary:after{content:" ▴"}
-.zwhy .zwb{padding:0 14px 14px;font:500 13px/1.6 -apple-system,"PingFang SC",sans-serif}
-.zwhy .zwb b{color:#C2386F;font-weight:900;margin-right:4px}
-.zwhy .zwb div+div{margin-top:6px}
-.zempty{padding:60px 20px;text-align:center;color:#C9A0B0;font:800 15px -apple-system,"PingFang SC",sans-serif}
-.zempty img{width:110px;display:block;margin:0 auto 12px}
 /* tail panels on dark */
 .ztail{padding:18px 14px 0}
 .ztail .wnote,.ztail .panel{background:#1C1418;border:2px solid #3A2430;border-radius:22px}
@@ -445,11 +302,110 @@ body{background:#121014;background-image:none;color:var(--ink);font-family:-appl
 .ztail .sd{color:#9C7B8A}
 .ztail h2{color:#FFF6F8}
 .zsec{font:400 22px/1 "ZCOOL KuaiLe",-apple-system,"PingFang SC",sans-serif;color:var(--hot);margin:6px 2px 12px;transform:rotate(-1.5deg)}
-@media(prefers-reduced-motion:reduce){.zmast h1 span,.zph img,.zln b,.zbadge,.zpeek,.zhint,.zst,.zcv.flip,.zcv.nx,.zcv.pv{animation:none!important}}
+.zempty{padding:60px 20px;text-align:center;color:#C9A0B0;font:800 15px -apple-system,"PingFang SC",sans-serif}
+.zempty img{width:110px;display:block;margin:0 auto 12px}
+/* quiet header: tiny BUNNY wordmark, muted tabs */
+.ztop{padding:calc(8px + env(safe-area-inset-top,0px)) 14px 6px;gap:6px}
+.ztop .zb{font:800 13px/1 -apple-system,"PingFang SC",sans-serif;color:#C9A0B0;gap:6px}
+.ztop .zb img{width:22px}
+.ztop .zb span:first-of-type:before{content:"BUNNY";font:400 19px/1 Anton,Impact,sans-serif;color:var(--hot);letter-spacing:.04em;margin-right:7px;vertical-align:-2px}
+.zseg{background:none;box-shadow:none;padding:0;gap:2px}
+.zseg button{font:700 12px/1 -apple-system,"PingFang SC",sans-serif;padding:7px 9px;color:#8E6F7D}
+.zseg button b{display:none}
+.zseg button.on{background:#2A1A22;color:#FFD3E6;box-shadow:none}
+html[data-view=events] .pfab,html[data-view=events] .pfabt{display:none}
+.pfab{width:52px;height:52px;min-height:52px;padding:0;border-radius:50%;font-size:22px;justify-content:center;right:12px}.pfab span{display:none}
 
-/* compact floating camera: icon only so it doesn't cover the cover bunny */
-.pfab{width:52px;height:52px;min-height:52px;padding:0;border-radius:50%;font-size:22px;justify-content:center;right:12px}
-.pfab span{display:none}
+/* event chips */
+.sstripw{padding:2px 0 8px}
+.sstrip{display:flex;gap:7px;overflow-x:auto;padding:2px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch;align-items:center}
+.sstrip::-webkit-scrollbar{display:none}
+.sflt{flex:none;width:38px;height:38px;border-radius:50%;border:0;background:#1F151A;color:#C9A0B0;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.sflt.on{background:#FFD3E6;color:#1A0A10}
+.sch{flex:none;display:flex;flex-direction:column;align-items:flex-start;gap:3px;border:0;cursor:pointer;background:#1F151A;color:#E9D3DC;border-radius:14px;padding:6px 12px 7px;max-width:160px;text-align:left;transition:background .2s,color .2s}
+.sch i{font:800 10px/1 "Inter Tight",-apple-system,sans-serif;letter-spacing:.06em;color:#9C7B8A;font-style:normal}
+.sch span{font:700 12.5px/1.15 -apple-system,"PingFang SC",sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:136px}
+.sch.on{background:var(--hot);color:#fff}.sch.on i{color:#FFE3EF}
+.sscn{display:none;flex-wrap:wrap;gap:7px;padding:8px 14px 2px}.sscn.show{display:flex}
+.sscn .pill{min-height:34px;font-size:13px;padding:0 6px 0 12px}
+
+/* card */
+#zissue{padding:0 14px;perspective:1200px}
+.scard{position:relative}
+.scard.flip .sphw{animation:sflip .55s cubic-bezier(.3,1.3,.5,1) both;transform-origin:50% 100%}
+.scard.flip .sths .sth{animation:sup .4s ease both}
+.scard.flip .sths .sth:nth-child(2){animation-delay:.05s}.scard.flip .sths .sth:nth-child(3){animation-delay:.1s}.scard.flip .sths .sth:nth-child(4){animation-delay:.15s}.scard.flip .sths .sth:nth-child(5){animation-delay:.2s}
+.scard.nx .sphw{animation:snx .45s cubic-bezier(.2,.9,.3,1) both}.scard.pv .sphw{animation:spv .45s cubic-bezier(.2,.9,.3,1) both}
+@keyframes sflip{0%{transform:rotateY(-70deg) scale(.94);opacity:.2}100%{transform:none;opacity:1}}
+@keyframes snx{from{transform:translateX(60px);opacity:0}}@keyframes spv{from{transform:translateX(-60px);opacity:0}}
+@keyframes sup{from{transform:translateY(10px);opacity:0}}
+.sphw{position:relative;padding-top:22px}
+.speek{position:absolute;top:0;right:30px;width:58px;height:auto;z-index:1;animation:speek 3.6s ease-in-out infinite;transform-origin:50% 100%}
+@keyframes speek{0%,62%,100%{transform:translateY(16px)}72%,90%{transform:translateY(0)}}
+.sph{position:relative;z-index:2;height:clamp(300px,calc(100svh - 336px),520px);border-radius:28px;overflow:hidden;background:#fff;box-shadow:0 0 0 1.5px #3A2430,0 22px 40px -18px rgba(255,91,168,.35);touch-action:pan-y;transition:transform .25s}
+.sph.drag{transition:none}
+.shero{width:100%;height:100%;object-fit:contain;object-position:center 30%;display:block;pointer-events:none;-webkit-user-drag:none}
+.sno{display:flex;align-items:center;justify-content:center;height:100%;background:#1F151A}.sno img{width:110px}
+.stag{position:absolute;left:12px;top:12px;font:700 11.5px/1 -apple-system,"PingFang SC",sans-serif;color:#fff;background:rgba(18,16,20,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:7px 10px;border-radius:999px}
+.stag b{font:800 11px "Inter Tight",sans-serif;color:#FFB3D6;margin-left:3px}
+.slike{position:absolute;right:12px;top:10px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(18,16,20,.72);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.slike svg{width:20px;height:20px}.slike.on{background:var(--hot)}.slike.on svg{fill:#fff}
+.sinfo{position:absolute;left:0;right:0;bottom:0;padding:44px 16px 14px;background:linear-gradient(to top,rgba(18,16,20,.92) 0,rgba(18,16,20,.7) 55%,rgba(18,16,20,0))}
+.sinfo h2{margin:5px 0 0;font:900 25px/1.12 -apple-system,"PingFang SC",sans-serif;color:#fff;letter-spacing:-.01em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.swhen{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font:700 12.5px/1 -apple-system,"PingFang SC",sans-serif;color:#FFD3E6}
+.sbadge{font:900 10px/1 "Inter Tight",sans-serif;letter-spacing:.12em;background:var(--hot);color:#fff;padding:4px 7px;border-radius:6px}
+.swx{font:700 11px/1 -apple-system,"PingFang SC",sans-serif;color:#E9D3DC;background:rgba(255,255,255,.12);padding:4px 8px;border-radius:999px}
+
+/* thumbs */
+.sths{display:flex;justify-content:center;gap:12px;padding:14px 0 4px}
+.sth{border:0;background:none;padding:0;display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;color:#C9A0B0}
+.sthi{width:54px;height:54px;border-radius:50%;overflow:hidden;background:#fff;box-shadow:0 0 0 2px #2A1A22;display:block;transition:transform .15s,box-shadow .15s}
+.sthi img{width:100%;height:100%;object-fit:cover;display:block}
+.sthi .zph0{display:flex;align-items:center;justify-content:center;height:100%;font:800 15px -apple-system,sans-serif;color:#C2386F}
+.sth:active .sthi{transform:scale(.92)}.sth:focus-visible .sthi{box-shadow:0 0 0 2px var(--hot)}
+.sth em{font:700 11px/1 -apple-system,"PingFang SC",sans-serif;font-style:normal}
+.sline{display:flex;align-items:center;justify-content:center;gap:10px;padding:6px 0 10px;font:600 11.5px/1 -apple-system,"PingFang SC",sans-serif;color:#8E6F7D}
+.sline b{color:#C9A0B0}
+.sline button{border:0;background:none;color:#FFB3D6;font:700 11.5px/1 -apple-system,"PingFang SC",sans-serif;padding:4px 2px;cursor:pointer}
+
+/* 3 buttons */
+.sbtns{display:grid;grid-template-columns:56px 1fr 1.5fr;gap:10px}
+.sbtn{height:54px;border-radius:18px;border:0;cursor:pointer;font:800 16px/1 -apple-system,"PingFang SC",sans-serif;display:flex;align-items:center;justify-content:center;gap:6px;transition:transform .12s;position:relative}
+.sbtn:active{transform:scale(.96)}
+.scam{background:#1F151A;color:#fff;font-size:22px;box-shadow:0 0 0 1.5px #3A2430}
+.scamtag{position:absolute;top:-7px;right:-8px;font:800 9.5px/1 -apple-system,sans-serif;font-style:normal;background:#FFD3E6;color:#1A0A10;padding:3px 5px;border-radius:999px;white-space:nowrap}
+.sadopt{background:#1F151A;color:#FFD3E6;box-shadow:0 0 0 1.5px #3A2430}
+.sadopt.done{background:#FFD3E6;color:#1A0A10;box-shadow:none}
+.sswap{background:var(--hot);color:#fff;box-shadow:0 8px 22px -8px rgba(255,91,168,.8)}
+.sswap span{display:inline-block;transition:transform .5s}.sswap:active span{transform:rotate(180deg)}
+.scard .fbn{text-align:center;min-height:0;font:600 12px -apple-system,"PingFang SC",sans-serif;color:#FFB3D6;margin-top:6px}
+
+/* 更多 */
+.smorebox{display:none;margin:10px 14px 0;padding:14px 16px;background:#1C1418;border-radius:20px;box-shadow:0 0 0 1.5px #2A1A22;font:500 13px/1.6 -apple-system,"PingFang SC",sans-serif;color:#E9D3DC}
+.smorebox.show{display:block;animation:sup .3s ease both}
+.smorebox b{color:#FF8CC2;font-weight:800;margin-right:6px}.smorebox div+div{margin-top:5px}
+.smt{font:800 15px/1.3 -apple-system,"PingFang SC",sans-serif;color:#fff;margin-bottom:6px}
+.sextra{margin:26px 14px 0}
+.sextra summary{list-style:none;cursor:pointer;text-align:center;font:600 12px -apple-system,"PingFang SC",sans-serif;color:#6E5561;padding:8px}
+.sextra summary::-webkit-details-marker{display:none}
+.sextra .ztail{padding:8px 0 0}
+
+/* name sheet */
+.ssheetbg{position:fixed;inset:0;z-index:80;background:rgba(8,4,6,0);display:flex;align-items:flex-end;transition:background .25s}
+.ssheetbg.show{background:rgba(8,4,6,.55)}
+.ssheet{position:relative;width:100%;max-width:520px;margin:0 auto;background:#1C1418;border-radius:26px 26px 0 0;padding:22px 18px calc(22px + env(safe-area-inset-bottom,0px));display:flex;gap:14px;align-items:center;transform:translateY(100%);transition:transform .32s cubic-bezier(.2,.9,.3,1);box-shadow:0 -1px 0 #3A2430}
+.ssheetbg.show .ssheet{transform:none}
+.sgrab{position:absolute;top:8px;left:50%;width:36px;height:4px;margin-left:-18px;border-radius:2px;background:#3A2430}
+.ssi{flex:none;width:92px;height:92px;border-radius:18px;overflow:hidden;background:#F4EEF0}.ssi img{width:100%;height:100%;object-fit:cover}
+.ssi .zph0{display:flex;align-items:center;justify-content:center;height:100%;color:#C2386F;font-weight:800}
+.sst{min-width:0;display:flex;flex-direction:column;gap:5px;padding-right:22px}
+.sst em{font:700 11.5px/1 -apple-system,"PingFang SC",sans-serif;font-style:normal;color:#FF8CC2}
+.sst b{font:800 15.5px/1.3 -apple-system,"PingFang SC",sans-serif;color:#fff;word-break:break-word}
+.sst small{font:600 11.5px -apple-system,"PingFang SC",sans-serif;color:#FFE45C}
+.sst a{align-self:flex-start;margin-top:4px;font:700 12.5px -apple-system,"PingFang SC",sans-serif;color:#1A0A10;background:#FFD3E6;padding:7px 12px;border-radius:999px;text-decoration:none}
+.sclose{position:absolute;right:12px;top:12px;width:32px;height:32px;border-radius:50%;border:0;background:#2A1A22;color:#C9A0B0;font-size:18px;cursor:pointer}
+@media(prefers-reduced-motion:reduce){.speek,.scard.flip .sphw,.scard.nx .sphw,.scard.pv .sphw,.sth{animation:none!important}}
+.zsec{font:800 13px -apple-system,"PingFang SC",sans-serif;color:#FF8CC2;margin:4px 2px 10px}
 
 </style></head><body><div class="wrap">
 <header class="ztop"><div class="zb"><img id="zbun0" alt="" width="30" height="36"><span>一丹的衣橱</span><span class="zprev">试用版</span></div><div class="zseg" id="tabs"></div></header>
@@ -665,7 +621,7 @@ function newShuffle(o){var ids=genOutfit(o);if(!ids)return null;var l=FB.shuf[o.
 l.push({rec:v.rec,ids:ids,title:v.title,pal:v.pal,reason:v.reason,note:v.note});return v;}
 var GL={};var GE={};TYPES.forEach(function(g){GL[g.k]=g.label;if(g.empty)GE[g.k]=g.empty;});
 function variants(o){return[{rec:o.rec,title:o.title,pal:o.pal,items:o.items,miss:o.miss||[],reason:o.reason,note:o.note}].concat((o.alts||[]).map(function(x){return{rec:x.rec,title:x.title,pal:x.pal,items:x.items,miss:[],reason:x.reason,note:x.note};})).concat(shufList(o));}
-/* ===================== BLACK-PINK COMBO: one "issue" per event = magazine cover + scrapbook + bow folder ===================== */
+/* ===================== BLACK-PINK SIMPLE: one outfit per screen · big photo · round item thumbs · 3 buttons ===================== */
 var CNT=57,CDUP=false,ISPREV=true;
 var EVS=[];TYPES.forEach(function(g){g.opts.forEach(function(o){EVS.push({g:g,o:o});});});
 function stime(o){var s=o.sess&&o.sess[0];return s?String(s.t).split(/[–-]/)[0].trim():"";}
@@ -687,120 +643,83 @@ function dotBg(p){var c=palCols(p);if(c.length===1)return c[0];if(c.length===2)r
 function imgOr(it,cls){return it&&it.i?'<img src="'+esc(it.i)+'" alt="'+esc(it.n)+'" loading="lazy" draggable="false" onerror="this.outerHTML=\'<div class=&quot;zph0&quot;>♡</div>\'">':'<div class="zph0">'+(it&&it.miss?"缺":"♡")+'</div>';}
 function cntHTML(){return"本期 <b>"+CNT+"</b> 件单品，"+(CDUP?"有重复":"无重复")+" ✓";}
 function hasImg(it){return it&&!it.miss&&it.i;}
-
-/* ---- contents strip + scene filter ---- */
-function drawStrip(root){var w=el("div","zstripw"),s=el("div","zstrip");
-var f=el("button","zch flt");f.type="button";f.innerHTML="<i>FILTER</i><span>"+(evf==="all"?"全部场景":evf==="liked"?"♡ 喜欢":esc(GL[evf]||""))+" ▾</span>";f.onclick=function(){showScn=!showScn;renderEvents();};s.appendChild(f);
-evList().forEach(function(e){var o=e.o,s0=o.sess[0]||{};var b=el("button","zch"+(SEL===e?" on":""));b.type="button";b.setAttribute("data-ev",o.ev);
-b.innerHTML="<i>"+esc((s0.d||o.ed.slice(5).replace("-","/"))+" "+(s0.w||"")+" "+stime(o))+"</i><span>"+esc(s0.n||o.evn)+"</span>";
-b.onclick=function(){if(SEL===e)return;var L=evList();var dir=L.indexOf(e)>L.indexOf(SEL)?1:-1;SEL=e;openFolder=false;renderEvents(dir>0?"nx":"pv");};s.appendChild(b);});
-w.appendChild(s);var sc=el("div","zscn"+(showScn?" show":""));var total=EVS.length;
-sc.appendChild(pill(evf==="all","全部",total,function(){evf="all";showScn=false;renderEvents();}));
+var showMore=false;
+function wxChip(o){if(!o.wx)return"";var s=String(o.wx).replace("约 ","").replace("降雨 ","☂ ");return s;}
+function itemsOf(v){return v.items.concat((v.miss||[]).map(function(m){return{miss:1,n:m,sl:"缺",c:""};}));}
+/* ---- top: event chips + tucked scene filter ---- */
+function drawStrip(root){var w=el("div","sstripw"),s=el("div","sstrip");
+var f=el("button","sflt"+(evf!=="all"?" on":""));f.type="button";f.setAttribute("aria-label","筛选场景");f.innerHTML='<svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg>';f.onclick=function(){showScn=!showScn;renderEvents();};s.appendChild(f);
+evList().forEach(function(e){var o=e.o,s0=o.sess[0]||{};var b=el("button","sch"+(SEL===e?" on":""));b.type="button";b.setAttribute("data-ev",o.ev);
+b.innerHTML="<i>"+esc((s0.d||o.ed.slice(5).replace("-","/"))+" "+(s0.w||""))+"</i><span>"+esc(s0.n||o.evn)+"</span>";
+b.onclick=function(){if(SEL===e)return;var L=evList();var dir=L.indexOf(e)>L.indexOf(SEL)?1:-1;SEL=e;renderEvents(dir>0?"nx":"pv");};s.appendChild(b);});
+w.appendChild(s);var sc=el("div","sscn"+(showScn?" show":""));
+sc.appendChild(pill(evf==="all","全部",EVS.length,function(){evf="all";showScn=false;renderEvents();}));
 TYPES.forEach(function(g){sc.appendChild(pill(evf===g.k,g.label,g.opts.length,function(){evf=g.k;showScn=false;SEL=null;renderEvents();}));});
 var lp=pill(evf==="liked","♡ 喜欢",likes.length,function(){evf="liked";showScn=false;SEL=null;renderEvents();});lp.lastChild.id="lkcnt";sc.appendChild(lp);
 w.appendChild(sc);root.appendChild(w);
-setTimeout(function(){var on=s.querySelector(".zch.on");if(on&&s.scrollWidth>s.clientWidth){s.scrollLeft=Math.max(0,on.offsetLeft-s.clientWidth/2+on.offsetWidth/2);}},0);}
+setTimeout(function(){var on=s.querySelector(".sch.on");if(on&&s.scrollWidth>s.clientWidth){s.scrollLeft=Math.max(0,on.offsetLeft-s.clientWidth/2+on.offsetWidth/2);}},0);}
 
-/* ---- the issue: cover + scrapbook ---- */
-function coverHTML(e,V,vi,anim){var o=e.o,v=V[vi],it=v.items.concat((v.miss||[]).map(function(m){return{miss:1,n:m,sl:"缺"};})),s0=o.sess[0]||{},st=stime(o);
-var imgs=it.filter(hasImg),hero=imgs[0],ins=imgs[1];
-var shown=it.length>4?it.slice(0,3):it;var lines=shown.map(function(x,i){return'<div class="zln"><i>'+esc(x.sl)+'</i><b style="animation-delay:'+(450+i*200)+'ms">'+esc(x.n)+'</b></div>';}).join("");
-if(it.length>4)lines+='<div class="zln"><i>MORE</i><b style="animation-delay:'+(450+3*200)+'ms">+ '+(it.length-3)+' 件 ↓</b></div>';
-var nm=s0.n||o.evn,cls=nm.length<=6?"":nm.length<=12?"m":"s";var liked=likes.indexOf(o.id)>=0;
-return'<header class="zmast"><small><span>一丹的粉粉衣橱</span><span>VOL.26 · NO.'+esc(o.ed.slice(5).replace("-",""))+'</span></small><h1>'+"BUNNY".split("").map(function(c,i){return'<span style="animation-delay:'+(i*70)+'ms">'+c+'</span>';}).join("")+'</h1></header>'+
-'<div class="zph">'+(hero?'<img src="'+esc(hero.i)+'" alt="'+esc(hero.n)+'" draggable="false">':'<div class="zno"><img src="'+ILL.bunny_dance+'" alt=""></div>')+'</div>'+
-'<div class="zlines">'+lines+'</div>'+
-'<div class="zbadge"><span>'+esc(badgeTop(o))+'</span><big>'+esc(st||"--")+'</big><span>'+esc((s0.d||"")+" "+(s0.w||""))+'</span></div>'+
-(ins?'<div class="zinset"><img src="'+esc(ins.i)+'" alt="" draggable="false"><b>'+esc(ins.sl)+' ♡</b></div>':'')+
-'<div class="zissue">'+esc(vLabel(o,vi))+' · '+(vi+1)+'/'+V.length+'</div>'+
-'<button type="button" class="zlike'+(liked?" on":"")+'" aria-label="喜欢这一期" aria-pressed="'+(liked?"true":"false")+'">'+HSVG+'</button>'+
-'<div class="zhead"><div class="zkick">'+esc((s0.d||"")+" "+(s0.w||"")+" · "+(s0.t||"")+" · "+(GL[o.id.split("_")[0]]||""))+'</div>'+
-'<h2 class="'+cls+'">'+esc(nm)+'</h2>'+
-'<div class="zpal">配色 · '+esc(v.pal)+(o.wx?'<br>天气 '+esc(o.wx):'')+(s0.p?'<br>📍 '+esc(s0.p):'')+'</div></div>'+
-'<div class="zpeekh"></div><img class="zpeek" src="'+ILL.bunny_peek+'" alt="">'+
-'<div class="zhint">左右滑换活动 · 下滑打开手账<span>↓</span></div>';}
-var TAPES=["zt1","zt3","zt2","zt4","zt1","zt3"],ROTS=[-6,4,-3,5,-4,3];
-function stickerPos(n){var out=[],rows=[];var k=0;while(k<n){var c=Math.min(3,n-k);if(n-k===4)c=2;rows.push(c);k+=c;}
-var top=8;rows.forEach(function(c,ri){var w=c===3?31:c===2?42:48,gap=(100-c*w)/(c+1);for(var j=0;j<c;j++){out.push({l:gap*(j+1)+w*j,t:top+(j%2?0:8)+(ri%2?6:0),w:w});}top+=170;});return{p:out,h:top};}
-function bookHTML(e,V,vi){var o=e.o,v=V[vi],it=v.items.concat((v.miss||[]).map(function(m){return{miss:1,n:m,sl:"缺",c:""};})),n=it.length,s0=o.sess[0]||{};
-var sp=stickerPos(n),stk="";it.forEach(function(x,k){var p=sp.p[k],r=ROTS[k%ROTS.length];
-stk+='<div class="zst" data-k="'+k+'" style="left:'+p.l.toFixed(2)+'%;top:'+p.t+'px;width:'+p.w+'%;transform:rotate('+r+'deg);animation-delay:'+(150+k*140)+'ms">'+imgOr(x)+'<b class="cap"><em>'+esc(x.sl)+'</em><span>'+esc(x.n)+'</span></b><span class="zgrip" aria-label="拖动贴纸">✥</span></div>'+
-'<div class="ztape '+TAPES[k%TAPES.length]+'" style="left:calc('+(p.l+p.w/2).toFixed(2)+'% - 38px);top:'+(p.t-7)+'px;width:76px;transform:rotate('+(-r*1.4)+'deg)"></div>';});
-var sp2=Math.min(62,200/Math.max(1,n-1)),cards=it.map(function(x,i){var c=i-(n-1)/2,r=c*(n>4?9:14),dx=c*sp2+61,dy=18+Math.abs(c)*(n>4?8:14);
-var tag=x.u?'a':'div';return'<'+tag+' class="zcd in"'+(x.u?' href="'+esc(x.u)+'" target="_blank" rel="noopener noreferrer"':'')+' data-tf="translate('+dx.toFixed(1)+'px,'+dy+'px) rotate('+r+'deg)" style="transform:translate('+dx.toFixed(1)+'px,'+dy+'px) rotate('+r+'deg);z-index:'+(i+1)+'">'+imgOr(x)+'<b>'+esc(x.n)+'</b><span>'+esc(x.sl)+(x.c?' · '+esc(x.c):'')+(x.w?' · <em>未见发货邮件</em>':'')+'</span></'+tag+'>';}).join("");
-var dots=V.map(function(w,i){return'<button class="zdt'+(i===vi?" on":"")+'" type="button" data-i="'+i+'" aria-label="'+esc(vLabel(o,i))+'"><i style="background:'+dotBg(w.pal)+'"></i><small>'+vShort(o,i)+'</small></button>';}).join("");
-var on=FB.adopted[o.ev]===v.rec;
-var why='<details class="zwhy"><summary>为什么这样搭</summary><div class="zwb"><div><b>适合</b>'+esc(o.fit)+'</div>'+(o.sess.length?o.sess.map(function(x){return'<div><b>时间</b>'+esc(x.d+" "+x.w+" "+x.t)+(x.p?" · "+esc(x.p):"")+'</div>';}).join(""):'<div><b>时间</b>'+esc(GE[o.id.split("_")[0]]||"暂无课程，先备着")+'</div>')+
-(o.wx?'<div><b>天气</b>'+esc(o.wx)+'</div>':'')+'<div><b>为什么</b>'+esc(v.reason)+'</div>'+(v.note?'<div><b>提醒</b>'+esc(v.note)+'</div>':'')+(e.g.note?'<div><b>这一类</b>'+esc(e.g.note)+'</div>':'')+'</div></details>';
-return'<div class="ztape zt3" style="right:34px;top:4px;width:72px;transform:rotate(14deg);z-index:7"></div><div class="ztape zt4" style="left:24px;top:92px;width:70px;transform:rotate(-18deg);z-index:6"></div>'+
-'<div class="zbtop"><div class="zbk">单品拆解<small>~ pull a sticker, open the folder ♡</small></div><div class="zbk2">'+esc(v.title)+'</div>'+
-'<div class="znote">'+esc(vLabel(o,vi))+' · '+(vi+1)+'/'+V.length+'<br><i>'+esc(v.pal)+'</i><br>'+esc((s0.d||"")+" "+(s0.w||"")+" "+(s0.t||""))+(o.wx?'<br>天气 '+esc(o.wx.replace("约 ","")):'')+'</div></div>'+
-'<div class="zdrag-tip">长按贴纸或按 ✥ 可以拖着玩</div>'+
-'<div class="zboard" style="height:'+sp.h+'px">'+stk+'</div>'+
-'<div class="zstage'+(openFolder?" open":"")+'"><img class="zears" src="'+ILL.bunny_peek+'" alt=""><div class="zcards">'+cards+'</div>'+
-'<div class="zfd"><div class="zback"></div><div class="zfront" role="button" tabindex="0" aria-label="打开文件夹"><div class="zbow" aria-hidden="true"><i class="l"></i><i class="r"></i><i class="k"></i><i class="t"></i></div>'+
-'<h3>'+esc(vLabel(o,vi))+'<br>'+esc(v.title)+'</h3><p>配色 · '+esc(v.pal)+'</p><p>'+n+' 件单品 · 轻点文件夹打开 · 点颜色切换</p></div></div></div>'+
-'<div class="zdots">'+dots+'</div><div class="zdl">现在是 <b>'+esc(vLabel(o,vi))+'</b> · 主推荐 / 备选 1 / 备选 2'+(V.length>3?' / 新搭配':'')+'</div>'+
-'<img class="zstrip-ill" src="'+ILL.sticker_strip+'" alt="">'+
-'<div class="zdock"><div class="zacts">'+
-'<button class="zact zcam" type="button" aria-label="拍下我的穿搭">📷 拍一张<span class="zcamtag">'+esc(camTagText(o.ev))+'</span></button>'+
-'<button class="zact zadopt'+(on?" done":"")+'" type="button" aria-pressed="'+(on?"true":"false")+'">'+(on?"🎀 已采纳":"♡ 采纳这套")+'</button>'+
-(vi>0?'<button class="zact ghost zback0" type="button">↺ 回到主推荐</button>':'')+
-'<div class="zcnt">'+cntHTML()+'</div></div>'+
-'<img class="zbun" src="'+ILL.bunny_dance+'" alt="">'+
-'<button class="zstamp" type="button">换一套<br>↻</button></div>'+
-'<div class="fbn" aria-live="polite"></div>'+why;}
+/* ---- the card ---- */
+function cardHTML(e,V,vi){var o=e.o,v=V[vi],it=itemsOf(v),s0=o.sess[0]||{},st=stime(o),hero=it.filter(hasImg)[0];
+var liked=likes.indexOf(o.id)>=0,on=FB.adopted[o.ev]===v.rec,wx=wxChip(o),ct=camTagText(o.ev);
+var th=it.map(function(x,k){return'<button type="button" class="sth" data-k="'+k+'" aria-label="'+esc(x.sl+"："+x.n)+'"><span class="sthi">'+imgOr(x)+'</span><em>'+esc(x.sl)+'</em></button>';}).join("");
+return'<div class="sphw"><img class="speek" src="'+ILL.bunny_peek+'" alt="" aria-hidden="true">'+
+'<div class="sph">'+(hero?'<img class="shero" src="'+esc(hero.i)+'" alt="'+esc(hero.n)+'" draggable="false">':'<div class="sno"><img src="'+ILL.bunny_dance+'" alt=""></div>')+
+'<div class="stag">'+esc(vLabel(o,vi))+' <b>'+(vi+1)+'/'+V.length+'</b></div>'+
+'<button type="button" class="slike'+(liked?" on":"")+'" aria-label="喜欢" aria-pressed="'+(liked?"true":"false")+'">'+HSVG+'</button>'+
+'<div class="sinfo"><div class="swhen"><span class="sbadge">'+esc(badgeTop(o))+'</span>'+esc((s0.d||o.ed.slice(5).replace("-","/"))+" "+(s0.w||"")+(s0.t?" · "+s0.t:""))+(wx?'<span class="swx">'+esc(wx)+'</span>':'')+'</div>'+
+'<h2>'+esc(s0.n||o.evn)+'</h2></div></div></div>'+
+'<div class="sths">'+th+'</div>'+
+'<div class="sline"><span>'+cntHTML()+'</span>'+(vi>0?'<button type="button" class="sback0">↺ 主推荐</button>':'')+'<button type="button" class="smore" aria-expanded="'+(showMore?"true":"false")+'">更多 '+(showMore?"▴":"▾")+'</button></div>'+
+'<div class="sbtns"><button type="button" class="sbtn scam" aria-label="拍下我的穿搭">📷'+(ct?'<i class="scamtag">'+esc(ct)+'</i>':'')+'</button>'+
+'<button type="button" class="sbtn sadopt'+(on?" done":"")+'" aria-pressed="'+(on?"true":"false")+'">'+(on?"🎀 已采纳":"♡ 采纳")+'</button>'+
+'<button type="button" class="sbtn sswap">换一套 <span>↻</span></button></div>'+
+'<div class="fbn" aria-live="polite"></div>';}
+function moreHTML(e,V,vi){var o=e.o,v=V[vi];
+return'<div class="smorebox'+(showMore?" show":"")+'"><div class="smt">'+esc(v.title||"")+'</div>'+
+'<div><b>配色</b>'+esc(v.pal)+'</div>'+
+(o.sess.length?o.sess.map(function(x){return'<div><b>时间</b>'+esc(x.d+" "+x.w+" "+x.t)+(x.p?" · "+esc(x.p):"")+'</div>';}).join(""):'<div><b>时间</b>'+esc(GE[o.id.split("_")[0]]||"暂无课程，先备着")+'</div>')+
+(o.wx?'<div><b>天气</b>'+esc(o.wx)+'</div>':'')+'<div><b>适合</b>'+esc(o.fit)+'</div><div><b>为什么这样搭</b>'+esc(v.reason)+'</div>'+(v.note?'<div><b>提醒</b>'+esc(v.note)+'</div>':'')+(e.g.note?'<div><b>这一类</b>'+esc(e.g.note)+'</div>':'')+'</div>';}
 
-function wireIssue(box,e){var o=e.o;var V=variants(o),vi=Math.min(VI[o.ev]||0,V.length-1),v=V[vi];
-var cv=box.querySelector(".zcv"),bk=box.querySelector(".zbook"),fn=bk.querySelector(".fbn");
-bk.querySelector(".zstamp").onclick=function(){var b=this;b.classList.add("press");setTimeout(function(){b.classList.remove("press");},160);
-var nx=V[vi+1];if(!nx){nx=newShuffle(o);if(!nx){fbNote(fn,"暂时搭不出新的了");return;}}
-fbLog(o,v.rec,"swap",nx.rec,v.items,nx.gen?nx.items:null);VI[o.ev]=vi+1;FB.cur[o.ev]=vi+1;fbSave();drawIssue("flip");fbNote(document.querySelector(".zbook .fbn"),"换好啦");};
-bk.querySelectorAll(".zdt").forEach(function(d){d.onclick=function(){var i=+d.getAttribute("data-i");if(i===vi)return;VI[o.ev]=i;FB.cur[o.ev]=i;fbSave();drawIssue("flip");};});
-var b0=bk.querySelector(".zback0");if(b0)b0.onclick=function(){VI[o.ev]=0;FB.cur[o.ev]=0;fbSave();drawIssue("flip");};
-var ab=bk.querySelector(".zadopt");ab.onclick=function(){if(FB.adopted[o.ev]===v.rec)return;FB.adopted[o.ev]=v.rec;fbSave();ab.className="zact zadopt done";ab.textContent="🎀 已采纳";ab.setAttribute("aria-pressed","true");fbLog(o,v.rec,"adopt","",v.items);fbNote(fn,"已采纳");};
-var cb=bk.querySelector(".zcam");cb.onclick=function(ev){ev.stopPropagation();openCam({fixed:true,ev:o.ev,evn:o.evn,ed:o.ed,rec:V[0].rec,onDone:function(k){var t=cb.querySelector(".zcamtag");if(t)t.textContent=camTagText(k);}});};
-var lk=cv.querySelector(".zlike");lk.onclick=function(ev){ev.stopPropagation();var i=likes.indexOf(o.id);if(i>=0)likes.splice(i,1);else likes.push(o.id);saveLikes();updLikes();var on=likes.indexOf(o.id)>=0;lk.className="zlike"+(on?" on":"");lk.setAttribute("aria-pressed",on?"true":"false");};
-var st=bk.querySelector(".zstage"),fr=bk.querySelector(".zfront");fr.onclick=function(){openFolder=!openFolder;st.classList.toggle("open",openFolder);};
-fr.onkeydown=function(k){if(k.key==="Enter"||k.key===" "){k.preventDefault();fr.onclick();}};
-setTimeout(function(){bk.querySelectorAll(".zcd.in").forEach(function(c){c.classList.remove("in");});},60);
-bk.querySelectorAll(".zst").forEach(function(s){stickerDrag(s,bk.querySelector(".zboard"));});
-coverSwipe(cv);}
+/* ---- item name sheet ---- */
+function openSheet(x){closeSheet();var bg=el("div","ssheetbg");bg.id="ssheet";var sh=el("div","ssheet");sh.setAttribute("role","dialog");sh.setAttribute("aria-label",x.n);
+sh.innerHTML='<span class="sgrab"></span><div class="ssi">'+imgOr(x)+'</div><div class="sst"><em>'+esc(x.sl)+(x.c?' · '+esc(x.c):'')+'</em><b>'+esc(x.n)+'</b>'+(x.w?'<small>未见发货邮件，请确认已到货</small>':'')+(x.miss?'<small>衣橱里还缺这件</small>':'')+
+(x.u?'<a href="'+esc(x.u)+'" target="_blank" rel="noopener noreferrer">去商品页 ↗</a>':'')+'</div><button type="button" class="sclose" aria-label="关闭">×</button>';
+bg.appendChild(sh);document.body.appendChild(bg);requestAnimationFrame(function(){bg.classList.add("show");});
+bg.onclick=function(ev){if(ev.target===bg||ev.target.closest(".sclose"))closeSheet();};}
+function closeSheet(){var b=document.getElementById("ssheet");if(b)b.remove();}
+document.addEventListener("keydown",function(k){if(k.key==="Escape")closeSheet();});
 
-/* stickers: drag via the ✥ grip (instant) or a long-press (320ms) on the sticker; a normal swipe still scrolls the page */
-function stickerDrag(s,board){var armT=null,armed=false,drag=false,sx=0,sy=0,ox=0,oy=0,tid=null;
-function startDrag(x,y){drag=true;s.classList.remove("arm");s.classList.add("drag");ox=s.offsetLeft;oy=s.offsetTop;sx=x;sy=y;s.style.left=ox+"px";s.style.top=oy+"px";try{if(navigator.vibrate)navigator.vibrate(8);}catch(e){}}
-function move(x,y){var bw=board.clientWidth,bh=board.clientHeight;var nx=Math.max(-20,Math.min(bw-s.offsetWidth+20,ox+x-sx)),ny=Math.max(-20,Math.min(bh-40,oy+y-sy));s.style.left=nx+"px";s.style.top=ny+"px";}
-function end(){clearTimeout(armT);armT=null;armed=false;tid=null;if(drag){drag=false;s.classList.remove("drag");s.style.zIndex=String(5+(+board._z||0));board._z=(+board._z||0)+1;}s.classList.remove("arm");}
-s.addEventListener("touchstart",function(e){if(e.touches.length!==1){end();return;}var t=e.touches[0];tid=t.identifier;sx=t.clientX;sy=t.clientY;
-if(e.target.closest&&e.target.closest(".zgrip")){e.preventDefault();startDrag(sx,sy);return;}
-armT=setTimeout(function(){armed=true;s.classList.add("arm");startDrag(sx,sy);},320);},{passive:false});
-s.addEventListener("touchmove",function(e){var t=null;for(var i=0;i<e.changedTouches.length;i++)if(e.changedTouches[i].identifier===tid)t=e.changedTouches[i];if(!t)return;
-if(drag){if(e.cancelable)e.preventDefault();move(t.clientX,t.clientY);return;}
-if(armT&&(Math.abs(t.clientX-sx)>8||Math.abs(t.clientY-sy)>8)){clearTimeout(armT);armT=null;}},{passive:false});
-s.addEventListener("touchend",end);s.addEventListener("touchcancel",end);
-s.addEventListener("contextmenu",function(e){e.preventDefault();});
-s.addEventListener("pointerdown",function(e){if(e.pointerType!=="mouse"||e.button!==0)return;e.preventDefault();startDrag(e.clientX,e.clientY);
-function mm(ev){move(ev.clientX,ev.clientY);}function mu(){document.removeEventListener("pointermove",mm);document.removeEventListener("pointerup",mu);end();}
-document.addEventListener("pointermove",mm);document.addEventListener("pointerup",mu);});}
+function drawIssue(anim){var box=document.getElementById("zissue");if(!box)return;box.innerHTML="";if(!SEL){var em=el("div","zempty");em.appendChild(im(ILL.bunny_sleep,"","睡着的小兔"));em.appendChild(document.createTextNode(evf==="liked"?"还没有喜欢的：在照片右上角点 ♡":"这一类暂时没有活动"));box.appendChild(em);return;}
+var o=SEL.o,V=variants(o),vi=Math.min(VI[o.ev]||0,V.length-1),v=V[vi];VI[o.ev]=vi;markShown(o,v);fbSave();
+var cv=el("section","scard"+(anim?" "+anim:""));cv.innerHTML=cardHTML(SEL,V,vi);box.appendChild(cv);
+var mb=el("div");mb.innerHTML=moreHTML(SEL,V,vi);box.appendChild(mb.firstChild);
+wireIssue(box,SEL);}
 
-/* cover: horizontal swipe = previous / next event (vertical swipes scroll as usual: touch-action pan-y) */
-function coverSwipe(cv){var sx=0,sy=0,id=null,dx=0,h=false;
+function wireIssue(box,e){var o=e.o;var V=variants(o),vi=Math.min(VI[o.ev]||0,V.length-1),v=V[vi],it=itemsOf(v);
+var cv=box.querySelector(".scard"),fn=cv.querySelector(".fbn");
+cv.querySelector(".sswap").onclick=function(){var nx=V[vi+1];if(!nx){nx=newShuffle(o);if(!nx){fbNote(fn,"暂时搭不出新的了");return;}}
+fbLog(o,v.rec,"swap",nx.rec,v.items,nx.gen?nx.items:null);VI[o.ev]=vi+1;FB.cur[o.ev]=vi+1;fbSave();drawIssue("flip");fbNote(document.querySelector(".scard .fbn"),"换好啦");};
+var b0=cv.querySelector(".sback0");if(b0)b0.onclick=function(){VI[o.ev]=0;FB.cur[o.ev]=0;fbSave();drawIssue("flip");};
+var ab=cv.querySelector(".sadopt");ab.onclick=function(){if(FB.adopted[o.ev]===v.rec)return;FB.adopted[o.ev]=v.rec;fbSave();ab.className="sbtn sadopt done";ab.textContent="🎀 已采纳";ab.setAttribute("aria-pressed","true");fbLog(o,v.rec,"adopt","",v.items);fbNote(fn,"已采纳");};
+var cb=cv.querySelector(".scam");cb.onclick=function(ev){ev.stopPropagation();openCam({fixed:true,ev:o.ev,evn:o.evn,ed:o.ed,rec:V[0].rec,onDone:function(k){var t=cb.querySelector(".scamtag");if(!t){t=el("i","scamtag");cb.appendChild(t);}t.textContent=camTagText(k);}});};
+var lk=cv.querySelector(".slike");lk.onclick=function(ev){ev.stopPropagation();var i=likes.indexOf(o.id);if(i>=0)likes.splice(i,1);else likes.push(o.id);saveLikes();updLikes();var on=likes.indexOf(o.id)>=0;lk.className="slike"+(on?" on":"");lk.setAttribute("aria-pressed",on?"true":"false");};
+cv.querySelectorAll(".sth").forEach(function(b){b.onclick=function(){openSheet(it[+b.getAttribute("data-k")]);};});
+var mo=cv.querySelector(".smore");mo.onclick=function(){showMore=!showMore;var bx=box.querySelector(".smorebox");bx.classList.toggle("show",showMore);mo.textContent="更多 "+(showMore?"▴":"▾");mo.setAttribute("aria-expanded",showMore?"true":"false");if(showMore)setTimeout(function(){bx.scrollIntoView({behavior:"smooth",block:"nearest"});},30);};
+photoSwipe(cv.querySelector(".sph"));}
+
+/* photo: horizontal swipe = previous / next event (vertical still scrolls) */
+function photoSwipe(cv){var sx=0,sy=0,id=null,dx=0,h=false;
 cv.addEventListener("pointerdown",function(e){if(e.pointerType==="mouse")return;if(e.target.closest("button,a"))return;id=e.pointerId;sx=e.clientX;sy=e.clientY;dx=0;h=false;});
 cv.addEventListener("pointermove",function(e){if(e.pointerId!==id)return;dx=e.clientX-sx;var dy=e.clientY-sy;if(!h){if(Math.abs(dx)>10&&Math.abs(dx)>Math.abs(dy)*1.3){h=true;cv.classList.add("drag");}else if(Math.abs(dy)>10){id=null;return;}else return;}
-cv.style.transform="translateX("+(dx*0.5)+"px) rotate("+(dx/40)+"deg)";});
+cv.style.transform="translateX("+(dx*0.4)+"px) rotate("+(dx/60)+"deg)";});
 function up(e,cancel){if(e.pointerId!==id)return;id=null;cv.classList.remove("drag");cv.style.transform="";if(!h||cancel)return;var L=evList(),i=L.indexOf(SEL);
-if(dx<-60&&i<L.length-1){SEL=L[i+1];openFolder=false;renderEvents("nx");}else if(dx>60&&i>0){SEL=L[i-1];openFolder=false;renderEvents("pv");}}
+if(dx<-60&&i<L.length-1){SEL=L[i+1];renderEvents("nx");}else if(dx>60&&i>0){SEL=L[i-1];renderEvents("pv");}}
 cv.addEventListener("pointerup",function(e){up(e,false);});cv.addEventListener("pointercancel",function(e){up(e,true);});}
 
-function drawIssue(anim){var box=document.getElementById("zissue");if(!box)return;box.innerHTML="";if(!SEL){var em=el("div","zempty");em.appendChild(im(ILL.bunny_sleep,"","睡着的小兔"));em.appendChild(document.createTextNode(evf==="liked"?"还没有喜欢的：在封面右边点 ♡":"这一类暂时没有活动"));box.appendChild(em);return;}
-var y=window.scrollY||0,o=SEL.o,V=variants(o),vi=Math.min(VI[o.ev]||0,V.length-1),v=V[vi];VI[o.ev]=vi;markShown(o,v);fbSave();
-var cv=el("section","zcv"+(anim?" "+anim:""));cv.innerHTML=coverHTML(SEL,V,vi);box.appendChild(cv);
-var bk=el("section","zbook");bk.id="zbook";bk.innerHTML=bookHTML(SEL,V,vi);box.appendChild(bk);
-wireIssue(box,SEL);if(anim==="flip")window.scrollTo(0,y);}
-
 function renderEvents(anim){var root=document.getElementById("events");root.innerHTML="";var L=evList();if(L.indexOf(SEL)<0)SEL=L[0]||null;
-drawStrip(root);var ib=el("div");ib.id="zissue";root.appendChild(ib);drawIssue(anim);if(anim==="nx"||anim==="pv"){var t=document.getElementById("events");if(window.scrollY>t.offsetTop)window.scrollTo(0,t.offsetTop);}
+drawStrip(root);var ib=el("div");ib.id="zissue";root.appendChild(ib);drawIssue(anim);
+var dt0=document.createElement("details");dt0.className="sextra";var sm0=document.createElement("summary");sm0.textContent="天气 · 缺的单品 · 说明";dt0.appendChild(sm0);
 var tail=el("div","ztail");tail.appendChild(el("div","zsec","天气 & 小提醒"));
 var wn=el("div","wnote");wn.appendChild(im(ILL.bunny_umbrella,"","打伞的小兔"));var wt=el("div");wt.appendChild(el("div","wl","天气 · 西雅图 / Bellevue"));wt.appendChild(el("div","wsum",WINTRO));
 var dt=document.createElement("details");dt.className="wdt";var sm=document.createElement("summary");sm.textContent="逐日天气";dt.appendChild(sm);var wc=el("div","wchips");
@@ -811,7 +730,7 @@ MISSING.forEach(function(m){var li=el("li");var d=el("div");d.appendChild(el("b"
 tail.appendChild(el("div","sd","只用衣橱里已有的单品搭配（已排除退货、取消和美妆）。名称旁标“未见发货邮件”的单品，订单状态是已下单但没找到发货邮件，请确认已到货。点文件夹里有链接的单品可打开 Musinsa 商品页。"));
 var fs=el("div","sd fbst");fs.id="fbst";tail.appendChild(fs);
 if(!isStandalone()&&FBKEY)tail.appendChild(el("div","sd","📱 想放到手机桌面：用 Safari 打开专属链接 → 分享 → 添加到主屏幕。请保持地址栏里的 ?k= 不要删，这样桌面图标才带着钥匙。"));
-root.appendChild(tail);fbRefresh();}
+dt0.appendChild(tail);root.appendChild(dt0);fbRefresh();}
 
 /* ---------- shell ---------- */
 function setView(v){view=v;try{localStorage.setItem(VKEY,v);}catch(e){}document.documentElement.setAttribute("data-view",v);drawTabs();window.scrollTo(0,0);}
@@ -821,8 +740,6 @@ document.getElementById("reset").addEventListener("click",function(){cls="all";c
 document.getElementById("total").textContent=ITEMS.length;TYPES.forEach(function(g){NOPT+=g.opts.length;});
 document.getElementById("zbun0").src=ILL.bunny_peek;document.getElementById("hang").src=ILL.bear_hanger;
 renderEvents();renderWardrobe();drawTabs();fbFlush();
-/* hide the floating 📷 while the scrapbook dock (which has its own 📷) is on screen, so it never covers the 换一套 stamp */
-(function(){var f=document.querySelector(".pfab");if(!f)return;function chk(){var d=document.querySelector(".zdock");if(!d||view!=="events"){f.classList.remove("hide");return;}var r=d.getBoundingClientRect();f.classList.toggle("hide",r.top<innerHeight&&r.bottom>0);}window.addEventListener("scroll",chk,{passive:true});window.addEventListener("resize",chk);setInterval(chk,800);chk();})();
 
 </script><script>
 /* auto-update: home-screen app resumes without reloading, so poll version.json */
