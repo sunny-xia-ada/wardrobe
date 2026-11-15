@@ -530,7 +530,7 @@ var XSVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-widt
 var HSVG='<svg viewBox="0 0 24 22" fill="currentColor"><path d="M12 21C5 15.5 2 11.5 2 7.6 2 4.6 4.3 2.5 7 2.5c2.2 0 3.8 1.2 5 3 1.2-1.8 2.8-3 5-3 2.7 0 5 2.1 5 5.1 0 3.9-3 7.9-10 13.4z"/></svg>';
 
 /* ---------- feedback (采纳 / 换一套) ---------- */
-var PV="20261115-d3",FB_API="https://yidan-outfit-feedback.vercel.app/api/click",KKEY="yidanOutfitKey_v1",FSK="yidanOutfitState_v1",FQ="yidanOutfitQueue_v1";
+var PV="20261115-d4",FB_API="https://yidan-outfit-feedback.vercel.app/api/click",KKEY="yidanOutfitKey_v1",FSK="yidanOutfitState_v1",FQ="yidanOutfitQueue_v1";
 function isStandalone(){try{return window.navigator.standalone===true||(window.matchMedia&&window.matchMedia("(display-mode: standalone)").matches);}catch(e){return false;}}
 var FBKEY="";
 (function(){try{var u=new URL(location.href),k=u.searchParams.get("k");if(k){try{localStorage.setItem(KKEY,k);}catch(e){}}
@@ -875,19 +875,21 @@ renderEvents();renderWardrobe();drawTabs();fbFlush();
 
 </script><script>
 /* auto-update: home-screen app resumes without reloading, so poll version.json */
-(function(){var PV0="20261115-d3",K="yidanAutoUpd",busy=false,last=0;
+(function(){var PV0="20261115-d4",K="yidanAutoUpd",busy=false,last=0,pending=null,bar=null;
 function base(){return location.origin+location.pathname.replace(/[^\/]*$/,"");}
 function blocked(){var a=document.activeElement;if(a&&(a.tagName==="INPUT"||a.tagName==="TEXTAREA")&&a.value)return true;if(document.querySelector(".pov"))return true;if(document.querySelector(".drag"))return true;return false;}
-function check(force){if(busy||document.visibilityState==="hidden")return;var now=Date.now();if(!force&&now-last<20000)return;last=now;busy=true;
+function go(v){var u;try{u=new URL(location.href);}catch(e){location.replace(base()+"?v="+encodeURIComponent(v)+"&t="+Date.now());return;}u.searchParams.set("v",v);u.searchParams.set("t",String(Date.now()));try{sessionStorage.setItem(K,JSON.stringify({v:v,t:Date.now()}));}catch(e){}location.replace(u.pathname+u.search+u.hash);}
+function banner(v){pending=v;if(!bar){bar=document.createElement("div");bar.id="yidanUpd";bar.setAttribute("role","button");bar.textContent="有新版本 · 点我更新";bar.style.cssText="position:fixed;top:0;left:0;right:0;z-index:2147483647;background:#F8D5E0;color:#2B1A22;text-align:center;padding:12px 16px;padding-top:max(12px,env(safe-area-inset-top));font:600 15px/1.4 -apple-system,BlinkMacSystemFont,sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;";bar.addEventListener("click",function(){if(pending)go(pending);});}if(!bar.parentNode)(document.body||document.documentElement).appendChild(bar);}
+function check(force){if(busy)return;if(!force&&document.visibilityState==="hidden")return;var now=Date.now();if(!force&&now-last<20000)return;last=now;busy=true;
 fetch(base()+"version.json?t="+now,{cache:"no-store"}).then(function(r){return r.ok?r.json():null;}).then(function(j){busy=false;var v=j&&j.v;if(!v||v===PV0)return;
 var t=0;try{var o=JSON.parse(sessionStorage.getItem(K)||"{}");if(o.v===v)t=o.t||0;}catch(e){}
-if(now-t<120000)return; /* already tried this version in the last 2 min (CDN lag): don't loop */
-if(blocked()){setTimeout(function(){check(true);},15000);return;}
-try{sessionStorage.setItem(K,JSON.stringify({v:v,t:now}));}catch(e){}
-location.replace(base()+"?v="+encodeURIComponent(v));}).catch(function(){busy=false;});}
+var recent=now-t<120000;
+if(blocked()||recent){banner(v);if(blocked()&&!recent)setTimeout(function(){check(true);},15000);return;}
+go(v);}).catch(function(){busy=false;});}
 document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")check(true);});
-window.addEventListener("pageshow",function(){check(true);});
+window.addEventListener("pageshow",function(e){if(e&&e.persisted){busy=false;last=0;}check(true);});
 window.addEventListener("focus",function(){check(false);});
+window.addEventListener("load",function(){check(true);});
 setInterval(function(){check(true);},180000);
 check(true);})();
 </script></body></html>
